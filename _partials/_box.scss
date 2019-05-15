@@ -1,0 +1,13 @@
+.appCards{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.cards{
+    background-color: teal;
+    height: 200px;
+    margin: 20px;
+    width: 200px;
+}
