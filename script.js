@@ -44,41 +44,55 @@ $(function () {
 
     $(`.newCard`).on("click", function () {
         $(this).find(`h2`).toggleClass(`nobox`);
+        $(this).toggleClass(`front`).toggleClass(`back`);
         $(this).addClass(`clicked`);
-        
         // debugger;
         console.log(`clicked!`);
         // debugger;
-        // if ($(this).find(`h2`).hasClass(`nobox`)){
-        //     // debugger;
-        //     $(this).find(`h2`).removeClass(`nobox`);
-        // };
-        // debugger;
+
         console.log(`front`);
+        // let flipCard = $(this).germanFlashcards;
+       const flipCard = $(`li`).hasClass(`clicked`);
+        console.log({flipCard});
+        if (flipCard === true){
+            console.log(`flipcard is true!`)
+            $(this).addClass(`red`);
+        
+            const front = $(`li`).hasClass(`front`);
+            if (front === true) {
+                console.log(`has class of front!`)
+                $(`.front`).addClass(`blue`);
+            }
+        }
+
+        console.log({flipCard});
+
+        $("form").on("submit", function (event) {
+            event.preventDefault();
+
+            let userInput = $("input").val();
+            console.log(userInput);
+            let thisCard = $(germanFlashcards[0].englishWord);
+            if (userInput == flipCard)
+                console.log(`correct!`);
+            alert(`match!`);
+            $(`li`).removeClass(`blue`);
+
+        });
+        // } else if(flipCard === false) {
+        //     console.log(`flipcard not true!`)
+        //     $(`li`).addClass(`blue`);
+       
         // debugger;
         // $(this).toggleClass(`front`).toggleClass(`back`);
         
-        // debugger;
-        
-        // debugger;
+
         
         //when you click on a box something happens
         //probably it finds out the index of this object in the array germanFlashcards
         //and thne probably it saves the number of the index in a variable so that you can use it in the next function 
     })
-
-
-    $("form").on("submit", function (event) {
-        event.preventDefault();
-
-        let userInput = $("input").val();
-        console.log(userInput);
-        let flipCard = $(germanFlashcards[0].englishWord);
-        console.log(flipCard);
-        if (userInput = flipCard)
-            alert(`match!`);
-
-    });
+    
 
 // DON'T DELETE THIS, THIS IS HOW YOUR CODE WORKS
 });
