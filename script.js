@@ -1,4 +1,10 @@
-const germanFlashcards = [
+
+
+// A $( document ).ready() block.
+$(function () {
+    
+    // An array of objects with english and german values
+    const germanFlashcards = [
         {
             id: 0,
             germanWord: "kaffee",
@@ -9,7 +15,7 @@ const germanFlashcards = [
             germanWord: "milch",
             englishWord: "milk"
         },
-        {   
+        {
             id: 2,
             germanWord: "schwarz",
             englishWord: "black"
@@ -31,27 +37,53 @@ const germanFlashcards = [
         },
     ]
 
-// A $( document ).ready() block.
-//In the document ready, I need the 6 items in the array to associate themselves in a random order with the 6 items on the page
-//I need the germanWord
-$(document).ready(function () {
-    //randomizer function for numbers
-    function randomIndex(optionsArray){
-        const index = Math.floor(Math.random() * optionsArray.length);
-        return optionsArray[index]
-    }
-    //trying to get the randomizer to impact the germanFlashcards array index.  I want a random number in the index each time:
-    // i.e. germanFlashcards[3], germanFlashcards[0] etc
-    const optionsDisplay = randomIndex(germanFlashcards);
-    const newIndex = optionsDisplay.id;
-    console.log(newIndex);
+    germanFlashcards.forEach((word) => {
+        $(`.cards`).append(`<li class="newCard front card "><h2 class="nobox">${word.germanWord}</h2></li>`);
+    })
 
-        $(".cards").on("click", function (){
-            $(this).html(`<h2>${germanFlashcards[newIndex].germanWord}</h2>`);
-            //so the problem here is, you get the same newIndex each time because there's no loop
-            //you need a loop
-        })
+
+    $(`.newCard`).on("click", function () {
+        $(this).find(`h2`).toggleClass(`nobox`);
+        $(this).addClass(`clicked`);
+        
+        // debugger;
+        console.log(`clicked!`);
+        // debugger;
+        // if ($(this).find(`h2`).hasClass(`nobox`)){
+        //     // debugger;
+        //     $(this).find(`h2`).removeClass(`nobox`);
+        // };
+        // debugger;
+        console.log(`front`);
+        // debugger;
+        // $(this).toggleClass(`front`).toggleClass(`back`);
+        
+        // debugger;
+        
+        // debugger;
+        
+        //when you click on a box something happens
+        //probably it finds out the index of this object in the array germanFlashcards
+        //and thne probably it saves the number of the index in a variable so that you can use it in the next function 
+    })
+
+
+    $("form").on("submit", function (event) {
+        event.preventDefault();
+
+        let userInput = $("input").val();
+        console.log(userInput);
+        let flipCard = $(germanFlashcards[0].englishWord);
+        console.log(flipCard);
+        if (userInput = flipCard)
+            alert(`match!`);
+
     });
+
+// DON'T DELETE THIS, THIS IS HOW YOUR CODE WORKS
+});
+
+
 
 
         
@@ -67,29 +99,8 @@ $(document).ready(function () {
 
 
 
-// $(function (){
-//     $(".cards").on("click", function(){
-//         //when you click on a box something happens
-//         //probably it finds out the index of this object in the array germanFlashcards
-//         //and thne probably it saves the number of the index in a variable so that you can use it in the next function 
-//     })
-// });
 
-// $(function(){
-//     $("form").on("submit", function(event){
-//         event.preventDefault();
 
-//         let userInput = $("input").val();
-
-//         console.log(userInput);
-
-//         //sub the hardcoded index number below with a variable from the function above?
-//         let flipCard = $(germanFlashcards[3].englishWord);
-
-//         console.log(flipCard);
-//         //why does it stop working right here?
-//         if (userInput === flipCard) {
-//             debugger;
-//             console.log("match!");
-//         }
-//     })
+$(function(){
+    
+});

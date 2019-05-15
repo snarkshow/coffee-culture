@@ -203,8 +203,43 @@ a {
   -ms-flex-pack: justify;
   justify-content: space-between; }
 
-.cards {
-  background-color: teal;
+.cards li {
+  color: white;
+  font-family: sans-serif;
   height: 200px;
   margin: 20px;
-  width: 200px; }
+  width: 200px;
+  position: relative;
+  -webkit-perspective: 800px;
+  perspective: 800px; }
+
+.front, .back {
+  /* some styling for each card */
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  /*This means that when it is flipped over, we don't see the back */ }
+
+.front {
+  background: #a08b16;
+  /* green */ }
+
+.back {
+  background: teal;
+  /*orange */ }
+
+.card:hover .back {
+  -webkit-transform: rotateY(280deg);
+  transform: rotateY(280deg); }
+
+.card:hover .front {
+  -webkit-transform: rotateY(-180deg);
+  transform: rotateY(-180deg); }
+
+.nobox {
+  visibility: hidden; }

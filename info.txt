@@ -1,0 +1,39 @@
+- copy of the array (Array.from())
+- and now there's a new Array
+- generate random number that represents an index from the array 
+- and then you have to remove the item from the array because you don't want to repeat the choice
+- when you pull the number out of the array, you have to pop it off the end because otherwise when you randomize the number it'll be too high (because you can't choose the same item more than once)
+
+
+//RANDOMIZER
+// Right now it just generates a random number between 0 and 5
+
+    $(function randomIndex(wordArray) {
+        //generates a random number between 0 and 5
+        let randomNumber = Math.floor(Math.random() * wordArray.length);
+
+
+    })
+
+    const optionsDisplay = randomIndex(germanFlashcards);
+    console.log(optionsDisplay);
+
+
+//In the document ready, I need the 6 items in the array to associate themselves in a random order with the 6 items on the page
+//I need the germanWord
+$(document).ready(function () {
+    //randomizer function for numbers
+    
+    //trying to get the randomizer to impact the germanFlashcards array index.  I want a random number in the index each time:
+    // i.e. germanFlashcards[3], germanFlashcards[0] etc
+    
+
+        $(".cards").on("click", function (){
+            $(this).html(`<h2>${germanFlashcards[newIndex].germanWord}</h2>`);
+            //so the problem here is, you get the same newIndex each time because there's no loop
+            //you need a loop
+            //so long as i is less than the length of the array
+            //iterate by 1 
+            // 
+        })
+    });
