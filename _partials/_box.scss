@@ -58,18 +58,20 @@
     }
 
     .red{
+        //active, clicked, flipped over
         background-color: red;
     }
 
     .blue{
+        //not active, not clickable
         background-color: blue;
         pointer-events: none;
     }
 
-    // .complete{
-    //     background-color: green;
-    //     pointer-events: none;
-    // }
+    .complete{
+        background-color: green;
+        pointer-events: none;
+    }
 
     .green{
         background-color: green;

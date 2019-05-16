@@ -38,75 +38,100 @@ $(function () {
     ]
 
     germanFlashcards.forEach((word) => {
-        $(`.cards`).append(`<li class="newCard front card "><h2 class="nobox">${word.germanWord}</h2></li>`);
+        $(`.cards`).append(`<li class="newCard back card "><h2 class="nobox">${word.germanWord}</h2></li>`);
     })
 
 
-    $(`.newCard`).on("click", function () {
+    $(`.back`).on("click", function () {
+        //click on a box, reveal the h2 text in german
         $(this).find(`h2`).toggleClass(`nobox`);
+        console.log(`reveal the words!`);
+        //this is just a test for making sure that the H2 is selected
         $(this).find(`h2`).addClass(`green`);
-        //it starts with a class of front, but that will be taken off
-        //THIS will receive a class of back, all other lis will still have a class of front
-        $(this).toggleClass(`front`).toggleClass(`back`);
+        console.log(`h2 is green`);
+        //it starts with a class of back, but that will be taken off
+        //THIS will add a class of front, all other lis will still have a class of back
+        $(this).toggleClass(`back`).toggleClass(`front`);
+        console.log(`class back is now class front`);
 
-        //if THIS has a class of "clicked", then it is stored in FlipCard
+        //if THIS thing that you clicked, now gets a class of "clicked", then it is stored in FlippedCard variable
         $(this).addClass(`clicked`);
-
-
-        const flipCard = $(`li`).hasClass(`clicked`);
-        //if flipCard is true, is a class of clicked, then it gets a class of red (which is the transform property, it gets big etc)
-        if (flipCard === true){
-            console.log(`flipcard is true!`)
-            $(this).addClass(`red`);
-            //since all the other lis still have a class of front, they can be selected so that all lis that have a class of front, are not clicked, have a class of blue (which disables the clicking possibility)
-            const front = $(`li`).hasClass(`front`);
-            if (front === true) {
-                console.log(`has class of front!`)
-                $(`.front`).addClass(`blue`);
+        console.log(`class of clicked`);
+        //flipcard is an li wth a class of clicked
+        const flippedCard = $(`li`).hasClass(`clicked`);
+        console.log(`the flipped card is the clicked card!`);
+        //if flipCard is true, and has  a class of clicked, then console log it
+        if (flippedCard === true){
+            console.log(`card is flipped!`)
+            //since all the other lis still have a class of back, they can be selected
+            //this means that all lis that have a class of back, are not clicked or flipped, so they get a class of blue (which disables the clicking possibility)
+            const back = $(`li`).hasClass(`back`);
+            console.log(`other cards are not flipped`);
+            if (back === true) {
+                console.log(`has class of back!`)
+                $(`.back`).addClass(`blue`);
+                console.log(`other cards can't be clicked!`);
             }
+        
         }
+        
+        //click on the card you just flipped over, because you want to try a different card
+        $(`.front`).on("click", function () {
 
+            $(this).removeClass(`clicked`);
+            $(`li.back`).removeClass(`blue`);
+        })
 
 
         $("form").on("submit", function (event) {
             //takes away the default function
             event.preventDefault();
-
+            //when you submit the match, the flipped card is taken out of play
+            $(`li.front`).addClass(`complete`);
+             //when you submit the match, the other cards that were inactive come back into play
+            $(`li.back`).removeClass(`blue`);
+   
             //saves the user input
             let userInput = $("input").val();
             console.log(userInput);
 
             //this finds the german text between the h2s
-            const listItem = $(`.clicked`).find(`h2`).text();
+            let listItem = $(`.clicked`).find(`h2`).text();
             console.log(listItem);
-
 
             //this variable takes the listItem above and compares it to the germanWord for each array object but it prints the associated english word once it finds a match
             //You need to put this in a function or something so that you can transfer it to the submit event listener
-            germanFlashcards.forEach((property) => {
-                thisCard = ``;
-                debugger;
-                if (listItem == property.germanWord) {
-                    debugger;
-                    console.log(`${property.englishWord}`);
-                    debugger;
+            //How can I store the result of this forEach loop in a variable that I can use?
+            let thisCard = germanFlashcards.filter((property) => {
+                // console.log(listItem, property.germanWord, listItem === property.germanWord)
+                // if (listItem === property.germanWord) {
+                //     // return (`${property.englishWord}`);
+                //     listItem = `${property.englishWord}`;
+                // }
+                if (listItem === property.germanWord){
+                    return property.englishWord
                 }
-            })
-            console.log(thisCard); //the problem is right now thisCArd isn't actually being defined.  Where to define the variable???
-            // //make dynamic 
 
-            
-            debugger;
+            })
+            thisCard = thisCard[0].englishWord;
+            console.log(thisCard); //the problem is right now thisCArd isn't actually being defined.  Where to define the variable???
+
 
             if (userInput === thisCard){
                 console.log(`correct!`);
                 alert(`match!!!`);
                 $(`li`).removeClass(`blue`);
-            } else{
+                $(`li`).removeClass(`clicked`);
+                $(`h2`).addClass(`nobox`);
+                $("input").val("");
+            } else {
                 alert(`No match`);
+                $(`h2`).addClass(`nobox`);
+                $(`li`).removeClass(`clicked`);
+                $("input").val("");
             }   
             
-
+       
         });
         // } else if(flipCard === false) {
         //     console.log(`flipcard not true!`)
