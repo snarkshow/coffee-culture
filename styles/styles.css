@@ -203,6 +203,12 @@ a {
   -ms-flex-pack: justify;
   justify-content: space-between; }
 
+.appInput {
+  background-color: rgba(63, 0, 0, 0.692);
+  height: 400px;
+  margin: 20px;
+  width: 200px; }
+
 .cards li {
   color: white;
   font-family: sans-serif;

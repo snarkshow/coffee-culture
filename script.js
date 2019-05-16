@@ -95,11 +95,27 @@ $(function () {
 
     tempArray.forEach((word) => {
         console.log(tempArray.word);
-        $(`.cards`).append(`<li class="newCard back card "><h2 class="nobox">${word.germanWord}</h2></li>`);
+        $(`.cards`).append(`<li class="newCard back card" tabindex="0"><h2 class="nobox">${word.germanWord}</h2></li>`);
     })
 
+    function a11yClick(event) {
+        if (event.type === 'click') {
+            return true;
+        }
+        else if (event.type === 'keypress') {
+            var code = event.charCode || event.keyCode;
+            if ((code === 32) || (code === 13)) {
+                return true;
+            }
+        }
+        else {
+            return false;
+        }
+    }
 
-    $(`.back`).on("click", function () {
+
+    $(`.back`).on("click keypress", function () {
+        if (a11yClick(event) === true){
         //click on a box, reveal the h2 text in german
         $(this).find(`h2`).toggleClass(`nobox`);
         console.log(`reveal the words!`);
@@ -131,11 +147,14 @@ $(function () {
             }
         
         }
+    }
         
         //click on the card you just flipped over, because you want to try a different card
-        $(`.front`).on("click", function () {
+        $(`.front`).on("click keypress", function () {
+            if (a11yClick(event) === true) {
             $(this).removeClass(`clicked`);
             $(`li.back`).removeClass(`blue`);
+            }
         })
 
         function keepScore(answer) {
@@ -148,7 +167,8 @@ $(function () {
             console.log(score);
         }
 
-        $("form").on("submit", function (event) {
+        $("form").on("submit keypress", function (event) {
+            if (a11yClick(event) === true) {
             //takes away the default function
             event.preventDefault();
             //when you submit the match, the flipped card is taken out of play
@@ -195,10 +215,10 @@ $(function () {
                 $("input").val("");
             }   
 
-            if (score.right + score.wrong === 6){
+            if (score.right + score.wrong === tempArray.length){
                 alert(`you're done! you got ${score.right} right!`)
             }
-            
+        }
        
         });
 
