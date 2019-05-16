@@ -41,9 +41,9 @@ $(function () {
         $(`.cards`).append(`<li class="newCard front card "><h2 class="nobox">${word.germanWord}</h2></li>`);
     })
 
-
     $(`.newCard`).on("click", function () {
         $(this).find(`h2`).toggleClass(`nobox`);
+        $(this).find(`h2`).addClass(`green`);
         $(this).toggleClass(`front`).toggleClass(`back`);
         $(this).addClass(`clicked`);
         // debugger;
@@ -65,18 +65,30 @@ $(function () {
             }
         }
 
-        console.log({flipCard});
+        let listItem = $(this).find(`h2`).text();
+        console.log(listItem);
+
 
         $("form").on("submit", function (event) {
+            //takes away the default function
             event.preventDefault();
 
+            //saves the user input
             let userInput = $("input").val();
             console.log(userInput);
+            //make dynamic 
             let thisCard = $(germanFlashcards[0].englishWord);
-            if (userInput == flipCard)
+            console.log(thisCard);
+
+            if (userInput === thisCard){
                 console.log(`correct!`);
-            alert(`match!`);
-            $(`li`).removeClass(`blue`);
+                alert(`match!!!`);
+                $(`li`).removeClass(`blue`);
+            } else{
+                alert(`No match`);
+            }
+                
+            
 
         });
         // } else if(flipCard === false) {

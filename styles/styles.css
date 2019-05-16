@@ -257,6 +257,5 @@ a {
   background-color: blue;
   pointer-events: none; }
 
-.complete {
-  background-color: green;
-  pointer-events: none; }
+.green {
+  background-color: green; }
