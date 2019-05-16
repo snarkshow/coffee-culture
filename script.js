@@ -3,6 +3,8 @@
 // A $( document ).ready() block.
 $(function () {
 
+
+
     // An array of objects with english and german values
     let score = {
         right: 0,
@@ -40,9 +42,59 @@ $(function () {
             germanWord: "bitte",
             englishWord: "please"
         },
+        {
+            id: 6,
+            germanWord: "zucker",
+            englishWord: "sugar"
+        },
+        {
+            id: 7,
+            germanWord: "klein",
+            englishWord: "small"
+        },
+        {
+            id: 8,
+            germanWord: "zum mitnehmen",
+            englishWord: "to go"
+        },
+        {
+            id: 9,
+            germanWord: "entschuldigung",
+            englishWord: "excuse me"
+        },
+
+        
     ]
 
-    germanFlashcards.forEach((word) => {
+    function shuffle(array) {
+        let currentIndex = array.length, temporaryValue, randomIndex;
+
+        // While there remain elements to shuffle...
+        while (0 !== currentIndex) {
+
+            // Pick a remaining element...
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex -= 1;
+
+            // And swap it with the current element.
+            temporaryValue = array[currentIndex];
+            array[currentIndex] = array[randomIndex];
+            array[randomIndex] = temporaryValue;
+        }
+
+        return array;
+    }
+
+    // Used like so
+    tempArray = shuffle(germanFlashcards);
+    console.log(tempArray);
+
+    // germanFlashcards.forEach((word) => {
+    //     $(`.cards`).append(`<li class="newCard back card "><h2 class="nobox">${word.germanWord}</h2></li>`);
+    // })
+
+    tempArray.forEach((word) => {
+        console.log(tempArray.word);
         $(`.cards`).append(`<li class="newCard back card "><h2 class="nobox">${word.germanWord}</h2></li>`);
     })
 
@@ -126,20 +178,16 @@ $(function () {
                 }
             })
             thisCard = thisCard[0].englishWord;
-            console.log(thisCard); //the problem is right now thisCArd isn't actually being defined.  Where to define the variable??
 
-            if (userInput === thisCard){
+
+            if (userInput.toLowerCase() === thisCard){
                 keepScore(`right`);
-                console.log(userInput === thisCard);
-                //this evaluates to true, if it's true, I want to add to a score or variable that is "Right"
-                console.log(`correct!`);
                 alert(`match!!!`);
                 $(`li`).removeClass(`blue`);
                 $(`li`).removeClass(`clicked`);
                 $(`h2`).addClass(`nobox`);
                 $("input").val("");
             } else {
-                //this is when the above statement evaluates to false, for false results I want to add to a score or variable of "Wrong"
                 keepScore(`wrong`);
                 alert(`No match`);
                 $(`h2`).addClass(`nobox`);
