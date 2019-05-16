@@ -41,23 +41,31 @@ $(function () {
         $(`.cards`).append(`<li class="newCard front card "><h2 class="nobox">${word.germanWord}</h2></li>`);
     })
 
+    
+    function compareWords() {
+        let listItem = $(this).find(`h2`).text();
+        germanFlashcards.forEach((property) => {
+            if (listItem == germanFlashcards.germanWord) {
+                console.log(listItem, germanFlashcards.germanWord);
+            }
+        })
+    }
+
     $(`.newCard`).on("click", function () {
         $(this).find(`h2`).toggleClass(`nobox`);
         $(this).find(`h2`).addClass(`green`);
+        //it starts with a class of front, but that will be taken off
+        //THIS will receive a class of back, all other lis will still have a class of front
         $(this).toggleClass(`front`).toggleClass(`back`);
-        $(this).addClass(`clicked`);
-        // debugger;
-        console.log(`clicked!`);
-        // debugger;
 
-        console.log(`front`);
-        // let flipCard = $(this).germanFlashcards;
-       const flipCard = $(`li`).hasClass(`clicked`);
-        console.log({flipCard});
+        //if THIS has a class of "clicked", then it is stored in FlipCard
+        $(this).addClass(`clicked`);
+        const flipCard = $(`li`).hasClass(`clicked`);
+        //if flipCard is true, is a class of clicked, then it gets a class of red (which is the transform property, it gets big etc)
         if (flipCard === true){
             console.log(`flipcard is true!`)
             $(this).addClass(`red`);
-        
+            //since all the other lis still have a class of front, they can be selected so that all lis that have a class of front, are not clicked, have a class of blue (which disables the clicking possibility)
             const front = $(`li`).hasClass(`front`);
             if (front === true) {
                 console.log(`has class of front!`)
@@ -65,8 +73,8 @@ $(function () {
             }
         }
 
-        let listItem = $(this).find(`h2`).text();
-        console.log(listItem);
+        
+
 
 
         $("form").on("submit", function (event) {
@@ -86,8 +94,7 @@ $(function () {
                 $(`li`).removeClass(`blue`);
             } else{
                 alert(`No match`);
-            }
-                
+            }   
             
 
         });
