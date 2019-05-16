@@ -2,8 +2,13 @@
 
 // A $( document ).ready() block.
 $(function () {
-    
+
     // An array of objects with english and german values
+    let score = {
+        right: 0,
+        wrong: 0,
+    };
+
     const germanFlashcards = [
         {
             id: 0,
@@ -77,11 +82,19 @@ $(function () {
         
         //click on the card you just flipped over, because you want to try a different card
         $(`.front`).on("click", function () {
-
             $(this).removeClass(`clicked`);
             $(`li.back`).removeClass(`blue`);
         })
 
+        function keepScore(answer) {
+            console.log(score);
+            if (answer === `right`){
+                score.right = score.right + 1;
+            } else {
+                score.wrong = score.wrong + 1;
+            }
+            console.log(score);
+        }
 
         $("form").on("submit", function (event) {
             //takes away the default function
@@ -111,13 +124,14 @@ $(function () {
                 if (listItem === property.germanWord){
                     return property.englishWord
                 }
-
             })
             thisCard = thisCard[0].englishWord;
-            console.log(thisCard); //the problem is right now thisCArd isn't actually being defined.  Where to define the variable???
-
+            console.log(thisCard); //the problem is right now thisCArd isn't actually being defined.  Where to define the variable??
 
             if (userInput === thisCard){
+                keepScore(`right`);
+                console.log(userInput === thisCard);
+                //this evaluates to true, if it's true, I want to add to a score or variable that is "Right"
                 console.log(`correct!`);
                 alert(`match!!!`);
                 $(`li`).removeClass(`blue`);
@@ -125,21 +139,21 @@ $(function () {
                 $(`h2`).addClass(`nobox`);
                 $("input").val("");
             } else {
+                //this is when the above statement evaluates to false, for false results I want to add to a score or variable of "Wrong"
+                keepScore(`wrong`);
                 alert(`No match`);
                 $(`h2`).addClass(`nobox`);
                 $(`li`).removeClass(`clicked`);
                 $("input").val("");
             }   
+
+            if (score.right + score.wrong === 6){
+                alert(`you're done! you got ${score.right} right!`)
+            }
             
        
         });
-        // } else if(flipCard === false) {
-        //     console.log(`flipcard not true!`)
-        //     $(`li`).addClass(`blue`);
-       
-        // debugger;
-        // $(this).toggleClass(`front`).toggleClass(`back`);
-        
+
 
         // DON'T DELETE THIS, THIS IS HOW YOUR CODE WORKS
     });
@@ -148,7 +162,7 @@ $(function () {
         //when you click on a box something happens
         //probably it finds out the index of this object in the array germanFlashcards
         //and thne probably it saves the number of the index in a variable so that you can use it in the next function 
-    })
+})
     
 
 
