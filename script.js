@@ -41,15 +41,6 @@ $(function () {
         $(`.cards`).append(`<li class="newCard front card "><h2 class="nobox">${word.germanWord}</h2></li>`);
     })
 
-    
-    function compareWords() {
-        let listItem = $(this).find(`h2`).text();
-        germanFlashcards.forEach((property) => {
-            if (listItem == germanFlashcards.germanWord) {
-                console.log(listItem, germanFlashcards.germanWord);
-            }
-        })
-    }
 
     $(`.newCard`).on("click", function () {
         $(this).find(`h2`).toggleClass(`nobox`);
@@ -60,6 +51,8 @@ $(function () {
 
         //if THIS has a class of "clicked", then it is stored in FlipCard
         $(this).addClass(`clicked`);
+
+
         const flipCard = $(`li`).hasClass(`clicked`);
         //if flipCard is true, is a class of clicked, then it gets a class of red (which is the transform property, it gets big etc)
         if (flipCard === true){
@@ -73,8 +66,6 @@ $(function () {
             }
         }
 
-        
-
 
 
         $("form").on("submit", function (event) {
@@ -84,9 +75,28 @@ $(function () {
             //saves the user input
             let userInput = $("input").val();
             console.log(userInput);
-            //make dynamic 
-            let thisCard = $(germanFlashcards[0].englishWord);
-            console.log(thisCard);
+
+            //this finds the german text between the h2s
+            const listItem = $(`.clicked`).find(`h2`).text();
+            console.log(listItem);
+
+
+            //this variable takes the listItem above and compares it to the germanWord for each array object but it prints the associated english word once it finds a match
+            //You need to put this in a function or something so that you can transfer it to the submit event listener
+            germanFlashcards.forEach((property) => {
+                thisCard = ``;
+                debugger;
+                if (listItem == property.germanWord) {
+                    debugger;
+                    console.log(`${property.englishWord}`);
+                    debugger;
+                }
+            })
+            console.log(thisCard); //the problem is right now thisCArd isn't actually being defined.  Where to define the variable???
+            // //make dynamic 
+
+            
+            debugger;
 
             if (userInput === thisCard){
                 console.log(`correct!`);
@@ -106,6 +116,9 @@ $(function () {
         // $(this).toggleClass(`front`).toggleClass(`back`);
         
 
+        // DON'T DELETE THIS, THIS IS HOW YOUR CODE WORKS
+    });
+
         
         //when you click on a box something happens
         //probably it finds out the index of this object in the array germanFlashcards
@@ -113,22 +126,9 @@ $(function () {
     })
     
 
-// DON'T DELETE THIS, THIS IS HOW YOUR CODE WORKS
-});
 
 
 
-
-        
-
-
-
-// //     for (let i = 0; i <= germanFlashcards.length; i++){
-// //         const shuffleCard = germanFlashcards[i];
-// //         if ()
-// //     }
-// //     $(".cards").html(`<h2>${germanFlashcards[2].germanWord}</h2>`);
-// // });
 
 
 
