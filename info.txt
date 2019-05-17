@@ -5,18 +5,6 @@
 - when you pull the number out of the array, you have to pop it off the end because otherwise when you randomize the number it'll be too high (because you can't choose the same item more than once)
 
 
-//RANDOMIZER
-// Right now it just generates a random number between 0 and 5
-
-    $(function randomIndex(wordArray) {
-        //generates a random number between 0 and 5
-        let randomNumber = Math.floor(Math.random() * wordArray.length);
-
-
-    })
-
-    const optionsDisplay = randomIndex(germanFlashcards);
-    console.log(optionsDisplay);
 
 
 //In the document ready, I need the 6 items in the array to associate themselves in a random order with the 6 items on the page
@@ -37,3 +25,7 @@ $(document).ready(function () {
             // 
         })
     });
+
+
+put a wrapper on everything 
+quadrants/containers: title, instructions, form, cards

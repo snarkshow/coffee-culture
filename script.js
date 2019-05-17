@@ -84,7 +84,6 @@ $(function () {
 
         return array;
     }
-
     // Used like so
     tempArray = shuffle(germanFlashcards);
     console.log(tempArray);
@@ -94,7 +93,6 @@ $(function () {
     // })
 
     tempArray.forEach((word) => {
-        console.log(tempArray.word);
         $(`.cards`).append(`<li class="newCard back card" tabindex="0"><h2 class="nobox">${word.germanWord}</h2></li>`);
     })
 
@@ -161,56 +159,65 @@ $(function () {
             console.log(score);
             if (answer === `right`){
                 score.right = score.right + 1;
+                $(`.rightAnswers`).text(`you have ${score.right} points`);
             } else {
                 score.wrong = score.wrong + 1;
             }
             console.log(score);
         }
 
+
+//this function reveals the right answer if you got it wrong 
+        function rightAnswer(correction){
+            if (correction ===`show`){
+                let germanCard = $(`.clicked`).find(`h2`).text();
+                germanFlashcards.filter((property) => {
+                    if (germanCard === property.germanWord) {
+                        let englishCard = property.englishWord;
+                        $(`.front`).find(`h2`).text(englishCard);
+                    }
+                })
+            }
+        }
+
+
         $("form").on("submit keypress", function (event) {
             if (a11yClick(event) === true) {
-            //takes away the default function
             event.preventDefault();
+
             //when you submit the match, the flipped card is taken out of play
             $(`li.front`).addClass(`complete`);
              //when you submit the match, the other cards that were inactive come back into play
             $(`li.back`).removeClass(`blue`);
-   
             //saves the user input
             let userInput = $("input").val();
-            console.log(userInput);
-
             //this finds the german text between the h2s
             let listItem = $(`.clicked`).find(`h2`).text();
             console.log(listItem);
-
             //this variable takes the listItem above and compares it to the germanWord for each array object but it prints the associated english word once it finds a match
-            //You need to put this in a function or something so that you can transfer it to the submit event listener
-            //How can I store the result of this forEach loop in a variable that I can use?
             let thisCard = germanFlashcards.filter((property) => {
-                // console.log(listItem, property.germanWord, listItem === property.germanWord)
-                // if (listItem === property.germanWord) {
-                //     // return (`${property.englishWord}`);
-                //     listItem = `${property.englishWord}`;
-                // }
                 if (listItem === property.germanWord){
                     return property.englishWord
                 }
             })
             thisCard = thisCard[0].englishWord;
-
-
+            // if the userInput and the variable are the same english word then all this stuff happens
             if (userInput.toLowerCase() === thisCard){
+                // adds to your correct score
                 keepScore(`right`);
                 alert(`match!!!`);
+                //takes off disabled class
                 $(`li`).removeClass(`blue`);
+                //no longer in a clicked state
                 $(`li`).removeClass(`clicked`);
+                //the h2 disappears
                 $(`h2`).addClass(`nobox`);
+                //clears the input
                 $("input").val("");
             } else {
                 keepScore(`wrong`);
+                rightAnswer(`show`);
                 alert(`No match`);
-                $(`h2`).addClass(`nobox`);
                 $(`li`).removeClass(`clicked`);
                 $("input").val("");
             }   

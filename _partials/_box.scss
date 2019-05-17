@@ -6,19 +6,30 @@
 }
 
 .appInput{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  align-items: center;
     background-color: rgba(63, 0, 0, 0.692);
     height: 400px;
     margin: 20px;
     width: 200px;
 }
 
+.cards{
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
 .cards li{
     color: white;
     font-family: sans-serif;
     // background-color: teal;
-    height: 200px;
+    height: 250px;
     margin: 20px;
-    width: 200px;
+    width: calc(200px - 40px);
     position: relative;
     perspective: 800px; 
     
@@ -75,10 +86,15 @@
     }
 
     .complete{
-        background-color: green;
+        border: 5px black solid;
+        background-color: transparent;
         pointer-events: none;
     }
 
     .green{
         background-color: green;
+    }
+
+    .inputFlex{
+      display: flex;
     }
