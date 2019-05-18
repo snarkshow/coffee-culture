@@ -192,12 +192,37 @@ a {
   margin: 0 auto;
   width: 90%; }
 
-h1 {
-  font-family: sans-serif; }
+.title {
+  text-align: center;
+  position: relative; }
+  .title h1 {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 4rem;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin: 25px 0 0;
+    text-transform: uppercase; }
+    .title h1 span {
+      font-size: 6rem; }
+  .title p {
+    font-family: "Rum Raisin", sans-serif;
+    font-size: 2rem;
+    letter-spacing: 2px;
+    margin: 0; }
 
 h2,
 h3 {
   font-size: 1.25rem; }
+
+.instructions {
+  color: #E86100;
+  display: inline-block;
+  font-size: 3rem;
+  margin: 0;
+  padding: 10px;
+  position: absolute;
+  top: 20px;
+  right: 20px; }
 
 .appInput {
   border-radius: 20px;
@@ -221,8 +246,9 @@ h3 {
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -ms-flex-pack: distribute;
-  justify-content: space-around; }
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
 
 .cards li {
   -webkit-box-align: center;

@@ -119,9 +119,9 @@ $(function () {
 
     tempArray.forEach((word) => {
         $(`.cards`)
-        .append(`<li class="newCard back card" tabindex="0">
-                    <h2 class="nobox">${word.germanWord}</h2>
-                    <h3 class="nobox">${word.englishWord}</h3></li>`);
+            .append(`<li class="newCard back card" tabindex="0">
+                    <h2 class="nobox" lang="de-DE">${word.germanWord}</h2>
+                    <h3 class="nobox" lang="en">${word.englishWord}</h3></li>`);
     })
 
     function a11yClick(event) {

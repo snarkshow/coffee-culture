@@ -1,0 +1,29 @@
+//App title and tagline
+
+.title{
+    text-align: center;
+    position: relative;
+    h1 {
+        font-family: $h1Font;
+        font-size: 4rem;
+        font-weight: bold;
+        letter-spacing: 3px;
+        margin: 25px 0 0;
+        text-transform: uppercase;
+        span{
+            font-size: 6rem;
+        }   
+    }  
+    p{
+        font-family: $taglineFont;
+        font-size: 2rem;
+        letter-spacing: 2px;
+        margin: 0;
+    } 
+}
+
+
+h2,
+h3{
+    font-size: 1.25rem;
+}
