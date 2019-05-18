@@ -1,0 +1,21 @@
+.editionInfo {
+    p{
+        color: $cream;
+        font-family: $taglineFont;
+        font-size: 1.75rem;
+        letter-spacing: 2px;
+    }
+}
+
+.appInput{
+    border: 2px $mocha solid;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $black;
+    height: 50px;
+    margin: 20px;
+    width: 100%;
+
+}

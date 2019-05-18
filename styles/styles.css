@@ -261,7 +261,14 @@ h3 {
     right: 0;
     bottom: 0; }
 
+.editionInfo p {
+  color: #E8DEC4;
+  font-family: "Rum Raisin", sans-serif;
+  font-size: 1.75rem;
+  letter-spacing: 2px; }
+
 .appInput {
+  border: 2px #927F70 solid;
   border-radius: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -272,7 +279,7 @@ h3 {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: rgba(63, 0, 0, 0.692);
+  background-color: #141414;
   height: 50px;
   margin: 20px;
   width: 100%; }

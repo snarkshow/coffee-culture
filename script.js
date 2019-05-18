@@ -85,29 +85,23 @@ $(function () {
             germanWord: "mit milch",
             englishWord: "with milk"
         },
-
-        
     ]
 
     function shuffle(array) {
         let currentIndex = array.length, temporaryValue, randomIndex;
-
         // While there remain elements to shuffle...
         while (0 !== currentIndex) {
-
             // Pick a remaining element...
             randomIndex = Math.floor(Math.random() * currentIndex);
             currentIndex -= 1;
-
             // And swap it with the current element.
             temporaryValue = array[currentIndex];
             array[currentIndex] = array[randomIndex];
             array[randomIndex] = temporaryValue;
         }
-
         return array;
     }
-    // Used like so
+
     tempArray = shuffle(germanFlashcards);
     console.log(tempArray);
 
@@ -138,7 +132,6 @@ $(function () {
     }
 
     // Close the modal with the X, OR close the modal by clicking outside of it
-
     let modal = document.getElementById('modal1');
 
     window.addEventListener("click", function () {
@@ -161,7 +154,6 @@ $(function () {
         }
     })
 
-
     // Flip a card over
     $(`.back`).on("click keypress", function () {
         if (a11yClick(event) === true){
@@ -172,14 +164,11 @@ $(function () {
         //THIS will add a class of front, all other lis will still have a class of back
         
             $(this).toggleClass(`back`).toggleClass(`front`);
-            console.log(`class back is now class front`);
-
             $(this).removeClass(`clicked`);
             $(`li.back`).removeClass(`inactive`);
         
         }
     });
-    
         
         //click on the card you just flipped over, because you want to try a different card
     $(`.cards`).on("click keypress", ".front", function () {
@@ -190,14 +179,10 @@ $(function () {
             //if flipCard is true, and has  a class of clicked, then console log it
             if (flippedCard === true) {
                 const back = $(`li`).hasClass(`back`);
-                console.log(`other cards are not flipped`);
                 if (back === true) {
-                    console.log(`has class of back!`)
                     $(`.back`).addClass(`inactive`);
-                    console.log(`other cards can't be clicked!`);
                 }
             }
-            
         }
     });
 
@@ -211,7 +196,6 @@ $(function () {
         }
         console.log(score);
     }
-
 
 //this function reveals the right answer if you got it wrong 
     function rightAnswer(correction){
@@ -230,7 +214,6 @@ $(function () {
             }
         }
     }
-
 
     $("form").on("submit keypress", function (event) {
         if (a11yClick(event) === true) {
@@ -272,9 +255,7 @@ $(function () {
                 $(`li`).removeClass(`clicked`);
                 $(`h2`).addClass(`nobox`);
                 $("input").val("");
-            }   
-
-            
+            }               
         }
     
         if (score.right + score.wrong === germanFlashcards.length) {
@@ -283,11 +264,6 @@ $(function () {
         }
     });
 
-
-        
-        //when you click on a box something happens
-        //probably it finds out the index of this object in the array germanFlashcards
-        //and thne probably it saves the number of the index in a variable so that you can use it in the next function 
 })
     
 
