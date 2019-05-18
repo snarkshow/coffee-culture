@@ -30,10 +30,11 @@
     letter-spacing: 2px;
     line-height: 1.5;
     display: inline-block;
-    padding: 100px 50px;
+    padding: 125px 50px;
+    position: relative;
     z-index: 50;
-    .fas {
-        position: relative;
-        right: 0; bottom: 0;
+    .closeModal{
+        position: absolute;
+        right: 30px; top: 30px;
     }
 }

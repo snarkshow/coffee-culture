@@ -190,9 +190,10 @@ $(function () {
         console.log(score);
         if (answer === `right`){
             score.right = score.right + 1;
-            $(`.rightAnswers`).text(`you've gotten ${score.right} answers right!!`);
+            $(`.rightAnswers`).text(`${score.right} right`);
         } else {
             score.wrong = score.wrong + 1;
+            $(`.wrongAnswers`).text(`${score.wrong} wrong`);
         }
         console.log(score);
     }
@@ -259,8 +260,9 @@ $(function () {
         }
     
         if (score.right + score.wrong === germanFlashcards.length) {
-            console.log(`you're done!`)
-            alert(`you're done!`)
+            $(`.cards`).addClass(`visuallyhidden`);
+            $(`.endMessage`).append
+                (`<h2>You're done!  You got ${score.right} answers right and ${score.wrong} answers wrong.  </h2>`);
         }
     });
 

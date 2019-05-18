@@ -43,15 +43,17 @@
             <div class="wrapper">
                 <div class="inputFlex">
                     <section class="appInput">
-                        <div class="editionInfo">
-                           <p>You're playing the German edition 🇩🇪 </p>
-                        </div>
-                        <!-- add label -->
-                        <form>
-                            <input class="user-input" type="text" placeholder="Type your guess">
+                        <section class="formFlex">
+                            <div class="editionInfo">
+                                <p>You're playing the German edition 🇩🇪 </p>
+                            </div>
                             <!-- add label -->
-                            <button type="submit" class="submitButton">Here's My Guess!</button>
-                        </form>
+                            <form>
+                                <label for="guess" class="visuallyhidden">Type your guess here</label>
+                                <input name="guess" class="user-input" type="text" placeholder="Type your guess">
+                                <button type="submit" class="submitButton">Here's My Guess!</button>
+                            </form>
+                        </section>
                         <div class="scoreCard">
                             <h4 class="rightAnswers"></h4>
                             <h4 class="wrongAnswers"></h4>
@@ -61,8 +63,10 @@
                     <!-- this is where the cards go -->
                     </ul>
                 </div>
+                <div class="endMessage">
+                    
+                </div>
             </div>            
-
         </main>
 
         

@@ -201,6 +201,7 @@ a {
     font-weight: bold;
     letter-spacing: 3px;
     margin: 25px 0 0;
+    text-shadow: 1px 1px #927F70;
     text-transform: uppercase; }
     .title h1 span {
       font-size: 6rem; }
@@ -254,18 +255,24 @@ h3 {
   letter-spacing: 2px;
   line-height: 1.5;
   display: inline-block;
-  padding: 100px 50px;
+  padding: 125px 50px;
+  position: relative;
   z-index: 50; }
-  .appInstructions .fas {
-    position: relative;
-    right: 0;
-    bottom: 0; }
+  .appInstructions .closeModal {
+    position: absolute;
+    right: 30px;
+    top: 30px; }
 
-.editionInfo p {
-  color: #E8DEC4;
-  font-family: "Rum Raisin", sans-serif;
-  font-size: 1.75rem;
-  letter-spacing: 2px; }
+.formFlex {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
 
 .appInput {
   border: 2px #927F70 solid;
@@ -273,16 +280,72 @@ h3 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
   background-color: #141414;
+  padding: 0 20px;
   height: 50px;
-  margin: 20px;
+  margin: 10px;
   width: 100%; }
+  .appInput .editionInfo p {
+    color: #E8DEC4;
+    font-family: "Rum Raisin", sans-serif;
+    font-size: 1.75rem;
+    letter-spacing: 2px; }
+  .appInput .editionInfo,
+  .appInput form {
+    margin: 0 15px; }
+  .appInput .scoreCard {
+    -ms-grid-column-align: end;
+    justify-self: end; }
+
+form .user-input {
+  margin: 15px;
+  padding: 3px;
+  width: 250px; }
+  form .user-input::-webkit-input-placeholder {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 1.25rem; }
+  form .user-input:-ms-input-placeholder {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 1.25rem; }
+  form .user-input::-ms-input-placeholder {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 1.25rem; }
+  form .user-input::placeholder {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 1.25rem; }
+
+form .submitButton {
+  background-color: #E86100;
+  border: none;
+  color: #141414;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 5px 20px;
+  text-transform: uppercase; }
+
+.scoreCard {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: "Rum Raisin", sans-serif;
+  font-size: 1.75rem; }
+  .scoreCard h4 {
+    margin: 0 10px;
+    text-transform: uppercase; }
+  .scoreCard .rightAnswers {
+    color: #49b675; }
+    .scoreCard .rightAnswers ::after {
+      color: #E8DEC4;
+      content: "/"; }
+  .scoreCard .wrongAnswers {
+    color: #ab0031; }
 
 .cards {
   display: -webkit-box;

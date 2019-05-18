@@ -7,25 +7,6 @@
 
 
 
-//In the document ready, I need the 6 items in the array to associate themselves in a random order with the 6 items on the page
-//I need the germanWord
-$(document).ready(function () {
-    //randomizer function for numbers
-    
-    //trying to get the randomizer to impact the germanFlashcards array index.  I want a random number in the index each time:
-    // i.e. germanFlashcards[3], germanFlashcards[0] etc
-    
-
-        $(".cards").on("click", function (){
-            $(this).html(`<h2>${germanFlashcards[newIndex].germanWord}</h2>`);
-            //so the problem here is, you get the same newIndex each time because there's no loop
-            //you need a loop
-            //so long as i is less than the length of the array
-            //iterate by 1 
-            // 
-        })
-    });
-
 
 put a wrapper on everything 
 quadrants/containers: title, instructions, form, cards
