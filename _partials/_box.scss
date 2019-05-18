@@ -1,39 +1,38 @@
-.appCards{
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
 
 .appInput{
+  border-radius: 20px;
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  padding: 20px;
   align-items: center;
     background-color: rgba(63, 0, 0, 0.692);
-    height: 400px;
+    height: 50px;
     margin: 20px;
-    width: 200px;
+    width: 100%;
 }
 
 .cards{
   display: flex;
   flex-wrap: wrap;
-
+  justify-content: space-around;
 }
 
 .cards li{
-    color: white;
+    align-items: center;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     font-family: sans-serif;
-    // background-color: teal;
-    height: 250px;
+    height: 150px;
     margin: 20px;
-    width: calc(200px - 40px);
+    width: calc(20% - 40px);
     position: relative;
     perspective: 800px; 
-    
+    text-align: center;
+    transform-style: preserve-3d;
 }
+
+
 
 // --------------------
 
@@ -42,59 +41,72 @@
       position: absolute;
       height:100%;
       width:100%;
-      transition:all 0.5s;
+      transition:all .5s;
       backface-visibility:hidden;  /*This means that when it is flipped over, we don't see the back */
     }
 
      .front {
-      background:#a08b16; /* green */
+      color: $black;
+      background:$cream;
+      border: 5px solid $chocolate;
+      transform:rotateY(360deg);
+  
     }
 
     .back {
-      background:teal; /*orange */
-    //   transform:rotateY(180deg);  /*By Default set the back to be rotate */
+      color: transparent;
+      background:$cream;
+      border: 5px solid $pumpkinSpice;
+      transform:rotateY(0deg);
     }
 
-    .card:hover .back {
-      transform:rotateY(280deg);
-    }
+    // .card:hover .back {
+    //   transform:rotateY(180deg);
+    // }
 
-    .card:hover .front {
-      transform:rotateY(-180deg);
-    }
+    // .card:hover .front {
+    //    transform:rotateY(-180deg)
+    // }
 
     .nobox{
         visibility: hidden;
     }
 
-    .disabled{
-        position: absolute;
-      height:100%;
-      width:100%;
+    .red{
+      background-color: red;
+    }
+
+    .rightAnswer{
+      color: $black;
+    }
+
+    .incorrect{
+      background-image: url("../assets/cross.png");
+      background-repeat: no-repeat; 
+      background-position: center center;
       pointer-events: none;
     }
 
-    .red{
-        //active, clicked, flipped over
-        background-color: red;
+    .correct{
+        background-image: url("../assets/checkmark.png");
+        background-repeat: no-repeat; 
+        background-position: center center;
+        pointer-events: none;
+        
     }
 
-    .blue{
-        //not active, not clickable
-        background-color: blue;
+    .inactive{
+        background: linear-gradient(45deg, $black, $grey, $cream);
         pointer-events: none;
     }
 
     .complete{
-        border: 5px black solid;
-        background-color: transparent;
+        border: 5px solid $black;
+        display: flex;
         pointer-events: none;
-    }
-
-    .green{
-        background-color: green;
     }
 
     .inputFlex{
       display: flex;
+      flex-direction: column;
     }

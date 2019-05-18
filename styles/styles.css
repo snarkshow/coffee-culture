@@ -192,10 +192,43 @@ a {
   margin: 0 auto;
   width: 90%; }
 
-.appCards {
+h1 {
+  font-family: sans-serif; }
+
+h2,
+h3 {
+  font-size: 1.25rem; }
+
+.appInput {
+  border-radius: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  background-color: rgba(63, 0, 0, 0.692);
+  height: 50px;
+  margin: 20px;
+  width: 100%; }
+
+.cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+  justify-content: space-around; }
+
+.cards li {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -205,98 +238,83 @@ a {
   flex-direction: column;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
-  justify-content: space-between; }
-
-.appInput {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding: 20px;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: rgba(63, 0, 0, 0.692);
-  height: 400px;
-  margin: 20px;
-  width: 200px; }
-
-.cards {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap; }
-
-.cards li {
-  color: white;
+  justify-content: space-between;
   font-family: sans-serif;
-  height: 250px;
+  height: 150px;
   margin: 20px;
-  width: calc(200px - 40px);
+  width: calc(20% - 40px);
   position: relative;
   -webkit-perspective: 800px;
-  perspective: 800px; }
+  perspective: 800px;
+  text-align: center;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d; }
 
 .front, .back {
   /* some styling for each card */
   position: absolute;
   height: 100%;
   width: 100%;
-  -webkit-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s;
+  -webkit-transition: all .5s;
+  -o-transition: all .5s;
+  transition: all .5s;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   /*This means that when it is flipped over, we don't see the back */ }
 
 .front {
-  background: #a08b16;
-  /* green */ }
+  color: #141414;
+  background: #E8DEC4;
+  border: 5px solid #56453E;
+  -webkit-transform: rotateY(360deg);
+  transform: rotateY(360deg); }
 
 .back {
-  background: teal;
-  /*orange */ }
-
-.card:hover .back {
-  -webkit-transform: rotateY(280deg);
-  transform: rotateY(280deg); }
-
-.card:hover .front {
-  -webkit-transform: rotateY(-180deg);
-  transform: rotateY(-180deg); }
+  color: transparent;
+  background: #E8DEC4;
+  border: 5px solid #E86100;
+  -webkit-transform: rotateY(0deg);
+  transform: rotateY(0deg); }
 
 .nobox {
   visibility: hidden; }
 
-.disabled {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  pointer-events: none; }
-
 .red {
   background-color: red; }
 
-.blue {
-  background-color: blue;
+.rightAnswer {
+  color: #141414; }
+
+.incorrect {
+  background-image: url("../assets/cross.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  pointer-events: none; }
+
+.correct {
+  background-image: url("../assets/checkmark.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  pointer-events: none; }
+
+.inactive {
+  background: -webkit-linear-gradient(45deg, #141414, #b8bbbc, #E8DEC4);
+  background: -o-linear-gradient(45deg, #141414, #b8bbbc, #E8DEC4);
+  background: linear-gradient(45deg, #141414, #b8bbbc, #E8DEC4);
   pointer-events: none; }
 
 .complete {
-  border: 5px black solid;
-  background-color: transparent;
+  border: 5px solid #141414;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   pointer-events: none; }
-
-.green {
-  background-color: green; }
 
 .inputFlex {
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex; }
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column; }

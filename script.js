@@ -29,13 +29,13 @@ $(function () {
         },
         {
             id: 3,
-            germanWord: "heiß",
-            englishWord: "hot"
+            germanWord: "ein",
+            englishWord: "one"
         },
         {
             id: 4,
-            germanWord: "schokolade",
-            englishWord: "chocolate"
+            germanWord: "groß",
+            englishWord: "large"
         },
         {
             id: 5,
@@ -61,6 +61,31 @@ $(function () {
             id: 9,
             germanWord: "entschuldigung",
             englishWord: "excuse me"
+        },
+        {
+            id: 10,
+            germanWord: "sahne",
+            englishWord: "cream"
+        },
+        {
+            id: 11,
+            germanWord: "haselnuss",
+            englishWord: "hazelnut"
+        },
+        {
+            id: 12,
+            germanWord: "soja milch",
+            englishWord: "soy milk"
+        },
+        {
+            id: 13,
+            germanWord: "mit",
+            englishWord: "with"
+        },
+        {
+            id: 14,
+            germanWord: "mit milch",
+            englishWord: "with milk"
         },
 
         
@@ -93,16 +118,19 @@ $(function () {
     // })
 
     tempArray.forEach((word) => {
-        $(`.cards`).append(`<li class="newCard back card" tabindex="0"><h2 class="nobox">${word.germanWord}</h2></li>`);
+        $(`.cards`)
+        .append(`<li class="newCard back card" tabindex="0">
+                    <h2 class="nobox">${word.germanWord}</h2>
+                    <h3 class="nobox">${word.englishWord}</h3></li>`);
     })
 
     function a11yClick(event) {
-        if (event.type === 'click') {
+        if (event.type === 'submit' || event.type === `click`) {
             return true;
         }
         else if (event.type === 'keypress') {
             var code = event.charCode || event.keyCode;
-            if ((code === 32) || (code === 13)) {
+            if (code === 13) {
                 return true;
             }
         }
@@ -111,84 +139,82 @@ $(function () {
         }
     }
 
-
     $(`.back`).on("click keypress", function () {
         if (a11yClick(event) === true){
         //click on a box, reveal the h2 text in german
-        $(this).find(`h2`).toggleClass(`nobox`);
-        console.log(`reveal the words!`);
-        //this is just a test for making sure that the H2 is selected
-        $(this).find(`h2`).addClass(`green`);
-        console.log(`h2 is green`);
+            $(this).find(`h2`).toggleClass(`nobox`);
+  
         //it starts with a class of back, but that will be taken off
         //THIS will add a class of front, all other lis will still have a class of back
-        $(this).toggleClass(`back`).toggleClass(`front`);
-        console.log(`class back is now class front`);
+        
+            $(this).toggleClass(`back`).toggleClass(`front`);
+            console.log(`class back is now class front`);
 
-        //if THIS thing that you clicked, now gets a class of "clicked", then it is stored in FlippedCard variable
-        $(this).addClass(`clicked`);
-        console.log(`class of clicked`);
-        //flipcard is an li wth a class of clicked
-        const flippedCard = $(`li`).hasClass(`clicked`);
-        console.log(`the flipped card is the clicked card!`);
-        //if flipCard is true, and has  a class of clicked, then console log it
-        if (flippedCard === true){
-            console.log(`card is flipped!`)
-            //since all the other lis still have a class of back, they can be selected
-            //this means that all lis that have a class of back, are not clicked or flipped, so they get a class of blue (which disables the clicking possibility)
-            const back = $(`li`).hasClass(`back`);
-            console.log(`other cards are not flipped`);
-            if (back === true) {
-                console.log(`has class of back!`)
-                $(`.back`).addClass(`blue`);
-                console.log(`other cards can't be clicked!`);
-            }
+            $(this).removeClass(`clicked`);
+            $(`li.back`).removeClass(`inactive`);
         
         }
-    }
+    });
+    
         
         //click on the card you just flipped over, because you want to try a different card
-        $(`.front`).on("click keypress", function () {
-            if (a11yClick(event) === true) {
-            $(this).removeClass(`clicked`);
-            $(`li.back`).removeClass(`blue`);
+    $(`.cards`).on("click keypress", ".front", function () {
+        if (a11yClick(event) === true) {
+            $(this).addClass(`clicked`);
+         
+            const flippedCard = $(`li`).hasClass(`clicked`);
+            //if flipCard is true, and has  a class of clicked, then console log it
+            if (flippedCard === true) {
+                const back = $(`li`).hasClass(`back`);
+                console.log(`other cards are not flipped`);
+                if (back === true) {
+                    console.log(`has class of back!`)
+                    $(`.back`).addClass(`inactive`);
+                    console.log(`other cards can't be clicked!`);
+                }
             }
-        })
-
-        function keepScore(answer) {
-            console.log(score);
-            if (answer === `right`){
-                score.right = score.right + 1;
-                $(`.rightAnswers`).text(`you have ${score.right} points`);
-            } else {
-                score.wrong = score.wrong + 1;
-            }
-            console.log(score);
+            
         }
+    });
+
+    function keepScore(answer) {
+        console.log(score);
+        if (answer === `right`){
+            score.right = score.right + 1;
+            $(`.rightAnswers`).text(`you've gotten ${score.right} answers right!!`);
+        } else {
+            score.wrong = score.wrong + 1;
+        }
+        console.log(score);
+    }
 
 
 //this function reveals the right answer if you got it wrong 
-        function rightAnswer(correction){
-            if (correction ===`show`){
-                let germanCard = $(`.clicked`).find(`h2`).text();
-                germanFlashcards.filter((property) => {
-                    if (germanCard === property.germanWord) {
-                        let englishCard = property.englishWord;
-                        $(`.front`).find(`h2`).text(englishCard);
-                    }
-                })
+    function rightAnswer(correction){
+        if (correction ===`show`){
+            let germanCard = $(`.clicked`).find(`h2`).text();
+            germanFlashcards.filter((property) => {
+                if (germanCard === property.germanWord) {
+                    let englishCard = property.englishWord;
+                    $(`.clicked`).find(`h3`).removeClass(`nobox`);
+                    $(`.clicked`).addClass(`incorrect`);
+                }
+            })
+        } else{
+            if (correction === `noshow`){
+                $(`.clicked`).addClass(`correct`);
             }
         }
+    }
 
 
-        $("form").on("submit keypress", function (event) {
-            if (a11yClick(event) === true) {
+    $("form").on("submit keypress", function (event) {
+        if (a11yClick(event) === true) {
             event.preventDefault();
-
             //when you submit the match, the flipped card is taken out of play
             $(`li.front`).addClass(`complete`);
-             //when you submit the match, the other cards that were inactive come back into play
-            $(`li.back`).removeClass(`blue`);
+                //when you submit the match, the other cards that were inactive come back into play
+            $(`li.back`).removeClass(`inactive`);
             //saves the user input
             let userInput = $("input").val();
             //this finds the german text between the h2s
@@ -205,9 +231,10 @@ $(function () {
             if (userInput.toLowerCase() === thisCard){
                 // adds to your correct score
                 keepScore(`right`);
+                rightAnswer(`noshow`);
                 alert(`match!!!`);
                 //takes off disabled class
-                $(`li`).removeClass(`blue`);
+                $(`li`).removeClass(`inactive`);
                 //no longer in a clicked state
                 $(`li`).removeClass(`clicked`);
                 //the h2 disappears
@@ -219,19 +246,19 @@ $(function () {
                 rightAnswer(`show`);
                 alert(`No match`);
                 $(`li`).removeClass(`clicked`);
+                $(`h2`).addClass(`nobox`);
                 $("input").val("");
             }   
 
-            if (score.right + score.wrong === tempArray.length){
-                alert(`you're done! you got ${score.right} right!`)
-            }
+            
         }
-       
-        });
-
-
-        // DON'T DELETE THIS, THIS IS HOW YOUR CODE WORKS
+    
+        if (score.right + score.wrong === germanFlashcards.length) {
+            console.log(`you're done!`)
+            alert(`you're done!`)
+        }
     });
+
 
         
         //when you click on a box something happens
@@ -240,14 +267,3 @@ $(function () {
 })
     
 
-
-
-
-
-
-
-
-
-$(function(){
-    
-});
