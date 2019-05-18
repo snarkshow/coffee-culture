@@ -8,12 +8,14 @@
     height: 50px;
     margin: 20px;
     width: 100%;
+
 }
 
 .cards{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+
 }
 
 .cards li{

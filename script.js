@@ -153,10 +153,10 @@ $(function () {
 
     $(`.help`).on(`click`, function(){
         $(`.modalOpen`).removeClass(`visuallyhidden`);
-            if ($(`.modalOpen`).not(`visuallyhidden`)){
-                $(`disableCards`).addClass(`.disableCardsOpen`);
+            if ($(`.modalOpen`).not(`visuallyhidden`)){ //if modal is visible 
+                $(`.cards`).addClass(`.disableCardsOpen`); //disable the cards
             if (($`.modalOpen`).hasClass(`visuallyhidden`)){
-                $(`disableCards`).removeClass(`disableCardsOpen`)
+                $(`.cards`).removeClass(`disableCardsOpen`)
             }
         }
     })
