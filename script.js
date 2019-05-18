@@ -3,8 +3,6 @@
 // A $( document ).ready() block.
 $(function () {
 
-
-
     // An array of objects with english and german values
     let score = {
         right: 0,
@@ -139,6 +137,28 @@ $(function () {
         }
     }
 
+    // Close the modal with the X, OR close the modal by clicking outside of it
+
+    let modal = document.getElementById('modal1');
+
+    window.addEventListener("click", function () {
+        if (event.target === modal) {
+            console.log(`modal`);
+            $(`.modalOpen`).addClass(`visuallyhidden`);
+            if()
+        }
+    })
+
+    $(`.closeModal`).on(`click`, function(){
+        $(`.modalOpen`).addClass(`visuallyhidden`);
+    })
+
+    $(`.help`).on(`click`, function(){
+        $(`.modalOpen`).removeClass(`visuallyhidden`);
+    })
+
+
+    // Flip a card over
     $(`.back`).on("click keypress", function () {
         if (a11yClick(event) === true){
         //click on a box, reveal the h2 text in german
