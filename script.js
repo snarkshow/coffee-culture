@@ -143,9 +143,7 @@ $(function () {
 
     window.addEventListener("click", function () {
         if (event.target === modal) {
-            console.log(`modal`);
             $(`.modalOpen`).addClass(`visuallyhidden`);
-            if()
         }
     })
 
@@ -155,6 +153,12 @@ $(function () {
 
     $(`.help`).on(`click`, function(){
         $(`.modalOpen`).removeClass(`visuallyhidden`);
+            if ($(`.modalOpen`).not(`visuallyhidden`)){
+                $(`disableCards`).addClass(`.disableCardsOpen`);
+            if (($`.modalOpen`).hasClass(`visuallyhidden`)){
+                $(`disableCards`).removeClass(`disableCardsOpen`)
+            }
+        }
     })
 
 

@@ -5,15 +5,26 @@
     margin: 0;
     padding: 10px;
     position: absolute; top: 20px; right: 20px;
+    z-index: 10;
 }
 
+.disableCards{
+    position: absolute; top: 0; right: 0; bottom: 0; left: 0;
+    
+}
+
+.disableCardsOpen{
+    display: block;
+    pointer-events: none;
+    z-index: 10;
+}
 
 .modalOpen{
     align-items: center;
     display: flex;
     justify-content: center;
     position: absolute; top: 0; right: 0; bottom: 0; left: 0;
-    z-index: 10;
+    z-index: 20;
 }
 
 .appInstructions{
@@ -27,7 +38,7 @@
     line-height: 1.5;
     display: inline-block;
     padding: 100px 50px;
-    z-index: 20;
+    z-index: 30;
     .fas {
         position: relative;
         right: 0; bottom: 0;
