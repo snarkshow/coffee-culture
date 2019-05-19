@@ -341,17 +341,6 @@ form .user-input {
     font-family: "Josefin Sans", sans-serif;
     font-size: 1.25rem; }
 
-.submitButton,
-.reload {
-  background-color: #E86100;
-  border: none;
-  color: #141414;
-  font-family: "Josefin Sans", sans-serif;
-  font-size: 1.1rem;
-  font-weight: bold;
-  padding: 5px 20px;
-  text-transform: uppercase; }
-
 .scoreCard {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -368,6 +357,20 @@ form .user-input {
       content: "/"; }
   .scoreCard .wrongAnswers {
     color: #ab0031; }
+
+.submitButton,
+.reload {
+  background-color: #E86100;
+  border: none;
+  color: #141414;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-transform: uppercase; }
+
+.reload {
+  font-size: 2rem;
+  padding: 20px 40px; }
 
 .cards {
   display: -webkit-box;

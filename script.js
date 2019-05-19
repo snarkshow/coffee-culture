@@ -15,76 +15,76 @@ $(function () {
             germanWord: "kaffee",
             englishWord: "coffee"
         },
-        // {
-        //     id: 1,
-        //     germanWord: "milch",
-        //     englishWord: "milk"
-        // },
-        // {
-        //     id: 2,
-        //     germanWord: "schwarz",
-        //     englishWord: "black"
-        // },
-        // {
-        //     id: 3,
-        //     germanWord: "ein",
-        //     englishWord: "one"
-        // },
-        // {
-        //     id: 4,
-        //     germanWord: "groß",
-        //     englishWord: "large"
-        // },
-        // {
-        //     id: 5,
-        //     germanWord: "bitte",
-        //     englishWord: "please"
-        // },
-        // {
-        //     id: 6,
-        //     germanWord: "zucker",
-        //     englishWord: "sugar"
-        // },
-        // {
-        //     id: 7,
-        //     germanWord: "klein",
-        //     englishWord: "small"
-        // },
-        // {
-        //     id: 8,
-        //     germanWord: "zum mitnehmen",
-        //     englishWord: "to go"
-        // },
-        // {
-        //     id: 9,
-        //     germanWord: "entschuldigung",
-        //     englishWord: "excuse me"
-        // },
-        // {
-        //     id: 10,
-        //     germanWord: "sahne",
-        //     englishWord: "cream"
-        // },
-        // {
-        //     id: 11,
-        //     germanWord: "haselnuss",
-        //     englishWord: "hazelnut"
-        // },
-        // {
-        //     id: 12,
-        //     germanWord: "soja milch",
-        //     englishWord: "soy milk"
-        // },
-        // {
-        //     id: 13,
-        //     germanWord: "mit",
-        //     englishWord: "with"
-        // },
-        // {
-        //     id: 14,
-        //     germanWord: "mit milch",
-        //     englishWord: "with milk"
-        // },
+        {
+            id: 1,
+            germanWord: "milch",
+            englishWord: "milk"
+        },
+        {
+            id: 2,
+            germanWord: "schwarz",
+            englishWord: "black"
+        },
+        {
+            id: 3,
+            germanWord: "ein",
+            englishWord: "one"
+        },
+        {
+            id: 4,
+            germanWord: "groß",
+            englishWord: "large"
+        },
+        {
+            id: 5,
+            germanWord: "bitte",
+            englishWord: "please"
+        },
+        {
+            id: 6,
+            germanWord: "zucker",
+            englishWord: "sugar"
+        },
+        {
+            id: 7,
+            germanWord: "klein",
+            englishWord: "small"
+        },
+        {
+            id: 8,
+            germanWord: "zum mitnehmen",
+            englishWord: "to go"
+        },
+        {
+            id: 9,
+            germanWord: "entschuldigung",
+            englishWord: "excuse me"
+        },
+        {
+            id: 10,
+            germanWord: "sahne",
+            englishWord: "cream"
+        },
+        {
+            id: 11,
+            germanWord: "haselnuss",
+            englishWord: "hazelnut"
+        },
+        {
+            id: 12,
+            germanWord: "soja milch",
+            englishWord: "soy milk"
+        },
+        {
+            id: 13,
+            germanWord: "mit",
+            englishWord: "with"
+        },
+        {
+            id: 14,
+            germanWord: "mit milch",
+            englishWord: "with milk"
+        },
     ]
 
     function shuffle(array) {
@@ -216,6 +216,13 @@ $(function () {
         }
     }
 
+    function required(inputtx) {
+        if (inputtx.value.length == 0) {
+            return false;
+        }
+        return true;
+    } 
+
     $("form").on("submit keypress", function (event) {
         if (a11yClick(event) === true) {
             event.preventDefault();
@@ -225,18 +232,15 @@ $(function () {
             $(`li.back`).removeClass(`inactive`);
             //saves the user input
             let userInput = $("input").val();
-            //this finds the german text between the h2s
+ 
             let listItem = $(`.clicked`).find(`h2`).text();
-            console.log(listItem);
-            //this variable takes the listItem above and compares it to the germanWord for each array object but it prints the associated english word once it finds a match
             let thisCard = germanFlashcards.filter((property) => {
-                if (listItem === property.germanWord){
+                if (listItem === property.germanWord) {
                     return property.englishWord
                 }
             })
             thisCard = thisCard[0].englishWord;
-            // if the userInput and the variable are the same english word then all this stuff happens
-            if (userInput.toLowerCase() === thisCard){
+            if (userInput.toLowerCase() === thisCard) {
                 // adds to your correct score
                 keepScore(`right`);
                 rightAnswer(`noshow`);
@@ -252,15 +256,15 @@ $(function () {
             } else {
                 keepScore(`wrong`);
                 rightAnswer(`show`);
-                alert(`No match`);
                 $(`li`).removeClass(`clicked`);
                 $(`h2`).addClass(`nobox`);
                 $("input").val("");
-            }               
+            }
         }
     
         if (score.right + score.wrong === germanFlashcards.length) {
             $(`.cards`).addClass(`visuallyhidden`);
+            $(`form`).addClass(`visuallyhidden`);
             $(`.endMessage`).removeClass(`visuallyhidden`);
             $(`.endMessage`).append
                 (`<h2><span>You're done!</span></h2>
@@ -268,6 +272,7 @@ $(function () {
                 <h3>Need more than coffee? Check out <a href="https://www.duolingo.com/course/de/en/Learn-German" target="_blank"> Duolingo's German module!</a></h3>
                 <button type="reload" class="reload">I want to try again!</button>`);
         }
+
 
         $(`.reload`).on(`click`, function () {
             console.log(`button clicked`)

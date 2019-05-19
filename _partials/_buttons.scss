@@ -1,0 +1,16 @@
+.submitButton,
+.reload{
+        background-color: $pumpkinSpice;
+        border: none;
+        color: $black;
+        font-family: $mainFont;
+        font-size: 1.1rem;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+.reload{
+    font-size: 2rem;
+    padding: 20px 40px;
+}
+

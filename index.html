@@ -49,7 +49,7 @@
                         <!-- add label -->
                         <form>
                             <label for="guess" class="visuallyhidden">Type your guess here</label>
-                            <input name="guess" class="user-input" type="text" placeholder="Type your guess">
+                            <input name="guess" id="guess" required="" autocomplete="off" class="user-input" type="text" placeholder="Type your guess" oninvalid="this.setCustomValidity('Please type in your guess!')">
                             <button type="submit" class="submitButton">Here's My Guess!</button>
                         </form>
                     </section>
