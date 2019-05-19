@@ -180,6 +180,9 @@ template {
 html {
   font-size: 16px; }
 
+body {
+  overflow: hidden; }
+
 ul {
   list-style-type: none;
   margin: 0;
@@ -207,7 +210,7 @@ a {
       font-size: 6rem; }
   .title p {
     font-family: "Rum Raisin", sans-serif;
-    font-size: 2rem;
+    font-size: 1.80rem;
     letter-spacing: 2px;
     margin: 0; }
 
@@ -263,6 +266,25 @@ h3 {
     right: 30px;
     top: 30px; }
 
+.endMessage {
+  border: #E86100 5px solid;
+  border-radius: 20px;
+  padding: 125px 50px; }
+  .endMessage h2 {
+    font-family: "Rum Raisin", sans-serif;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    line-height: 1.5;
+    margin: 0; }
+    .endMessage h2 span {
+      color: #E86100; }
+  .endMessage h3 {
+    font-family: "Rum Raisin", sans-serif;
+    font-size: 2rem;
+    letter-spacing: 2px;
+    line-height: 1.5;
+    margin: 0; }
+
 .formFlex {
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -276,7 +298,6 @@ h3 {
 
 .appInput {
   border: 2px #927F70 solid;
-  border-radius: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -289,7 +310,7 @@ h3 {
   background-color: #141414;
   padding: 0 20px;
   height: 50px;
-  margin: 10px;
+  margin: 10px 0;
   width: 100%; }
   .appInput .editionInfo p {
     color: #E8DEC4;
@@ -320,7 +341,8 @@ form .user-input {
     font-family: "Josefin Sans", sans-serif;
     font-size: 1.25rem; }
 
-form .submitButton {
+.submitButton,
+.reload {
   background-color: #E86100;
   border: none;
   color: #141414;
@@ -373,8 +395,8 @@ form .submitButton {
   -ms-flex-pack: justify;
   justify-content: space-between;
   font-family: sans-serif;
-  height: 150px;
-  margin: 20px;
+  height: 140px;
+  margin: 15px;
   width: calc(20% - 40px);
   position: relative;
   -webkit-perspective: 800px;

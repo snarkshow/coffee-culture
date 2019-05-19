@@ -19,7 +19,7 @@
     position: absolute; top: 0; right: 0; bottom: 0; left: 0;
     z-index: 40;
 }
-
+ 
 .appInstructions{
     color: $cream;
     background-color: $black;
@@ -37,4 +37,28 @@
         position: absolute;
         right: 30px; top: 30px;
     }
+}
+
+.endMessage {
+    border: $pumpkinSpice 5px solid;
+    border-radius: $cardBorders;   
+    padding: 125px 50px;
+    h2{
+        font-family: $taglineFont;
+        font-size: 2.5rem;
+        letter-spacing: 2px;
+        line-height: 1.5;
+        margin: 0;
+        span{
+            color: $pumpkinSpice;
+        }
+    }
+    h3{
+        font-family: $taglineFont;
+        font-size: 2rem;
+        letter-spacing: 2px;
+        line-height: 1.5;
+        margin: 0;
+    }
+    
 }
