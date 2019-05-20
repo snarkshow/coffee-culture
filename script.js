@@ -10,81 +10,81 @@ $(function () {
     };
 
     const germanFlashcards = [
-        // {
-        //     id: 0,
-        //     germanWord: "kaffee",
-        //     englishWord: "coffee"
-        // },
-        // {
-        //     id: 1,
-        //     germanWord: "milch",
-        //     englishWord: "milk"
-        // },
-        // {
-        //     id: 2,
-        //     germanWord: "schwarz",
-        //     englishWord: "black"
-        // },
-        // {
-        //     id: 3,
-        //     germanWord: "ein",
-        //     englishWord: "one"
-        // },
-        // {
-        //     id: 4,
-        //     germanWord: "groß",
-        //     englishWord: "large"
-        // },
+        {
+            id: 0,
+            germanWord: "kaffee",
+            englishWord: "coffee"
+        },
+        {
+            id: 1,
+            germanWord: "milch",
+            englishWord: "milk"
+        },
+        {
+            id: 2,
+            germanWord: "schwarz",
+            englishWord: "black"
+        },
+        {
+            id: 3,
+            germanWord: "ein",
+            englishWord: "one"
+        },
+        {
+            id: 4,
+            germanWord: "groß",
+            englishWord: "large"
+        },
         {
             id: 5,
             germanWord: "bitte",
             englishWord: "please"
         },
-        // {
-        //     id: 6,
-        //     germanWord: "zucker",
-        //     englishWord: "sugar"
-        // },
-        // {
-        //     id: 7,
-        //     germanWord: "klein",
-        //     englishWord: "small"
-        // },
-        // {
-        //     id: 8,
-        //     germanWord: "zum mitnehmen",
-        //     englishWord: "to go"
-        // },
-        // {
-        //     id: 9,
-        //     germanWord: "entschuldigung",
-        //     englishWord: "excuse me"
-        // },
-        // {
-        //     id: 10,
-        //     germanWord: "sahne",
-        //     englishWord: "cream"
-        // },
-        // {
-        //     id: 11,
-        //     germanWord: "haselnuss",
-        //     englishWord: "hazelnut"
-        // },
-        // {
-        //     id: 12,
-        //     germanWord: "soja milch",
-        //     englishWord: "soy milk"
-        // },
-        // {
-        //     id: 13,
-        //     germanWord: "mit",
-        //     englishWord: "with"
-        // },
-        // {
-        //     id: 14,
-        //     germanWord: "mit milch",
-        //     englishWord: "with milk"
-        // },
+        {
+            id: 6,
+            germanWord: "zucker",
+            englishWord: "sugar"
+        },
+        {
+            id: 7,
+            germanWord: "klein",
+            englishWord: "small"
+        },
+        {
+            id: 8,
+            germanWord: "zum mitnehmen",
+            englishWord: "to go"
+        },
+        {
+            id: 9,
+            germanWord: "entschuldigung",
+            englishWord: "excuse me"
+        },
+        {
+            id: 10,
+            germanWord: "sahne",
+            englishWord: "cream"
+        },
+        {
+            id: 11,
+            germanWord: "haselnuss",
+            englishWord: "hazelnut"
+        },
+        {
+            id: 12,
+            germanWord: "soja milch",
+            englishWord: "soy milk"
+        },
+        {
+            id: 13,
+            germanWord: "mit",
+            englishWord: "with"
+        },
+        {
+            id: 14,
+            germanWord: "mit milch",
+            englishWord: "with milk"
+        },
     ]
 
     function shuffle(array) {
