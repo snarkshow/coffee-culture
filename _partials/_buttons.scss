@@ -14,10 +14,12 @@
 }
 
 .reload{
+    @include border($chocolate);
     font-size: 1.5rem;
     line-height: 1;
     margin-top: 20px;
     padding: 20px 30px;
+    text-shadow: 1px 1px $cream;
 }
 
 @media (max-width: 480px){

@@ -13,7 +13,6 @@
     align-items: center;
     background-color: $black;
     padding: 0 20px;
-    margin: 10px 0;
     width: 100%;
     .editionInfo{
          p{
@@ -103,7 +102,6 @@ form {
     
    .appInput{
         justify-content: center;
-        margin: 10px 0;
         padding: 15px 20px;
     }   
 
@@ -126,8 +124,6 @@ form {
 
     .appInput{
         flex-direction: column;
-        margin: 10px 0;
-        padding: 15px 20px;
     }   
 
     
@@ -136,7 +132,6 @@ form {
 @media (max-width: 500px){
 
     .appInput{
-        padding: 15px 5px;
         .scoreCard h4{
             font-size: 1.25rem;
         }

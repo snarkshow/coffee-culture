@@ -1,12 +1,14 @@
 //APP INSTRUCTIONS 
 .help{
-    color: $pumpkinSpice;
+    background-color: $black;
+    border-radius: 50%;
+    color: $cream;
     display: inline-block;
     font-size: 3rem;
     margin: 0;
-    padding: 10px;
+    padding: 5px;
     position: absolute; top: 20px; right: 20px;
-
+    text-shadow: 1px 1px $mocha;
 }
 
 .appInstructions{
@@ -42,40 +44,47 @@
 //END OF CARDS, RESTART APP
 .endMessage {
     @include border($pumpkinSpice);
+    background: linear-gradient(90deg, rgba(232, 222, 196, 0.3), rgba(146, 127, 112, 0.7)), url("../assets/coffee-2-unsplash.jpg");
+    background-size: cover;
+    background-position: center center;
     border-radius: $cardBorders;   
     padding: 125px 50px;
     h2{
         @include instructionStyles(2.5rem);
+        text-shadow: 1px 1px $chocolate;
         span{
             color: $pumpkinSpice;
+            text-shadow: 2px 2px $black;
         }
     }
     h3{
         @include instructionStyles(2rem);
+        text-shadow: 2px 2px $chocolate;
     }   
     a{
         color: $green;
+        text-shadow: 1px 1px $black;
     }
 }
 
 
-//ALERT - REMEMBER TO FILL IN THE INPUT
-.alert{
-    @include instructionStyles(1.5rem);
-    @include border($chocolate);
-    background-color: $cream;
-    color: $red;
-    border-radius: $cardBorders;
-    display: inline-block;
-    padding: 10px 25px;
-    position: absolute;
-    z-index: 50;
-}
+// //ALERT - REMEMBER TO FILL IN THE INPUT
+// .alert{
+//     @include instructionStyles(1.5rem);
+//     @include border($chocolate);
+//     background-color: $cream;
+//     color: $red;
+//     border-radius: $cardBorders;
+//     display: inline-block;
+//     padding: 10px 25px;
+//     position: absolute;
+//     z-index: 50;
+// }
 
-.closeAlert{
-        position: absolute;
-        right: 10px; top: 10px;
-}
+// .closeAlert{
+//         position: absolute;
+//         right: 10px; top: 10px;
+// }
 
 //MEDIA QUERIES
 

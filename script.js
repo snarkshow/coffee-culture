@@ -10,81 +10,81 @@ $(function () {
     };
 
     const germanFlashcards = [
-        {
-            id: 0,
-            germanWord: "kaffee",
-            englishWord: "coffee"
-        },
-        {
-            id: 1,
-            germanWord: "milch",
-            englishWord: "milk"
-        },
-        {
-            id: 2,
-            germanWord: "schwarz",
-            englishWord: "black"
-        },
-        {
-            id: 3,
-            germanWord: "ein",
-            englishWord: "one"
-        },
-        {
-            id: 4,
-            germanWord: "groß",
-            englishWord: "large"
-        },
+        // {
+        //     id: 0,
+        //     germanWord: "kaffee",
+        //     englishWord: "coffee"
+        // },
+        // {
+        //     id: 1,
+        //     germanWord: "milch",
+        //     englishWord: "milk"
+        // },
+        // {
+        //     id: 2,
+        //     germanWord: "schwarz",
+        //     englishWord: "black"
+        // },
+        // {
+        //     id: 3,
+        //     germanWord: "ein",
+        //     englishWord: "one"
+        // },
+        // {
+        //     id: 4,
+        //     germanWord: "groß",
+        //     englishWord: "large"
+        // },
         {
             id: 5,
             germanWord: "bitte",
             englishWord: "please"
         },
-        {
-            id: 6,
-            germanWord: "zucker",
-            englishWord: "sugar"
-        },
-        {
-            id: 7,
-            germanWord: "klein",
-            englishWord: "small"
-        },
-        {
-            id: 8,
-            germanWord: "zum mitnehmen",
-            englishWord: "to go"
-        },
-        {
-            id: 9,
-            germanWord: "entschuldigung",
-            englishWord: "excuse me"
-        },
-        {
-            id: 10,
-            germanWord: "sahne",
-            englishWord: "cream"
-        },
-        {
-            id: 11,
-            germanWord: "haselnuss",
-            englishWord: "hazelnut"
-        },
-        {
-            id: 12,
-            germanWord: "soja milch",
-            englishWord: "soy milk"
-        },
-        {
-            id: 13,
-            germanWord: "mit",
-            englishWord: "with"
-        },
-        {
-            id: 14,
-            germanWord: "mit milch",
-            englishWord: "with milk"
-        },
+        // {
+        //     id: 6,
+        //     germanWord: "zucker",
+        //     englishWord: "sugar"
+        // },
+        // {
+        //     id: 7,
+        //     germanWord: "klein",
+        //     englishWord: "small"
+        // },
+        // {
+        //     id: 8,
+        //     germanWord: "zum mitnehmen",
+        //     englishWord: "to go"
+        // },
+        // {
+        //     id: 9,
+        //     germanWord: "entschuldigung",
+        //     englishWord: "excuse me"
+        // },
+        // {
+        //     id: 10,
+        //     germanWord: "sahne",
+        //     englishWord: "cream"
+        // },
+        // {
+        //     id: 11,
+        //     germanWord: "haselnuss",
+        //     englishWord: "hazelnut"
+        // },
+        // {
+        //     id: 12,
+        //     germanWord: "soja milch",
+        //     englishWord: "soy milk"
+        // },
+        // {
+        //     id: 13,
+        //     germanWord: "mit",
+        //     englishWord: "with"
+        // },
+        // {
+        //     id: 14,
+        //     germanWord: "mit milch",
+        //     englishWord: "with milk"
+        // },
     ]
 
     function shuffle(array) {
@@ -215,20 +215,21 @@ $(function () {
         } 
     }
     
-    $(`.closeAlert`).on(`click`, function () {
-        $(`.alert`).addClass(`visuallyhidden`);
-    })
+    // $(`.closeAlert`).on(`click`, function () {
+    //     $(`.alert`).addClass(`visuallyhidden`);
+    // })
 
-    function error(message){
-        if (message === `show`){
-            $(`.alert`).removeClass(`visuallyhidden`);
-            $(`li.back`).removeClass(`inactive`);
-            $(`li`).removeClass(`clicked`);
-            $(`h2`).addClass(`nobox`);
-        }
-    }
+    // function error(message){
+    //     if (message === `show`){
+    //         $(`.alert`).removeClass(`visuallyhidden`);
+    //         $(`li.back`).removeClass(`inactive`);
+    //         $(`li`).removeClass(`clicked`);
+    //         $(`h2`).addClass(`nobox`);
+    //     }
+    // }
 
-    $("form").on("submit keypress", function (event) {
+
+    $("form").on("submit", function (event) {
         if (a11yClick(event) === true){
             event.preventDefault();
 
@@ -236,9 +237,9 @@ $(function () {
             $(`li.back`).removeClass(`inactive`);
 
             let userInput = $("input").val();
-            if (userInput.length === 0){
-                error(`show`);
-            }
+            // if (userInput.length === 0){
+            //     error(`show`);
+            // }
             let listItem = $(`.clicked`).find(`h2`).text();
 
             let thisCard = germanFlashcards.filter((property) => { 

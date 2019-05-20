@@ -17,13 +17,13 @@
                     <h1><a href="index.html"><span>C</span>offee <span>C</span>ulture</a></h1>
                     <p>Travelling the world? <span class="narrow"></span>Learn how to order coffee like a local!</p>
                 </div>
-                <!-- <h1 class="appTitle">coffee + culture </h1> -->
+                
                 <div class="helpButton">
                     <i class="far fa-question-circle help"></i>
                 </div>
                 <div class="disableCards">
                     <div class="modalOpen" id="modal1">
-                        <div class="appInstructions visuallyhidden">
+                        <div class="appInstructions">
                             <ul>
                                 <li><i class="fas fa-times closeModal"></i></li>
                                 <li>Click a blank card to flip it over</li>
@@ -45,11 +45,11 @@
                         <!-- add label -->
                         <form>
                             <label for="guess" class="visuallyhidden">Type your guess here</label>
-                            <input name="guess" id="guess" required="" autocomplete="off" class="user-input" type="text" placeholder="Type your guess">
-                            <div class="alert visuallyhidden" id="alert1">
+                            <input name="guess" id="guess" required="" oninvalid="this.setCustomValidity('Please type in a guess!')" oninput="setCustomValidity('')" autocomplete="off" class="user-input" type="text" placeholder="Type your guess">
+                            <!-- <div class="alert visuallyhidden" id="alert1">
                                 <i class="fas fa-times closeAlert"></i>
                                 <p>Please type in your guess!</p>
-                            </div>
+                            </div> -->
                             <button type="submit" class="submitButton">Here's My Guess!</button>
                         </form>
                     </section>

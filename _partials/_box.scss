@@ -4,7 +4,7 @@
 	justify-content: space-between;
 	h2,  
 	h3{
-		font-size: 1.25rem;
+		font-size: 1.3rem;
 		word-break: break-all
 	}
 	h3{
@@ -45,13 +45,17 @@
 	color: $black;
 	background:$cream;
 	transform:rotateY(360deg);
+	box-shadow: 1px 1px $pumpkinSpice;
 }
 
 .back {
 	@include border($pumpkinSpice);
 	color: transparent;
-	background:$cream;
+	background-color: $cream;
+	background-size: contain;
+	box-shadow: 1px 1px $chocolate;
 	transform:rotateY(0deg);
+	
 }
 
 .nobox{

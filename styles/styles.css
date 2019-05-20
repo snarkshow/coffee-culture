@@ -192,11 +192,27 @@ a {
   margin: 0 auto;
   width: 90%; }
 
+header {
+  background: -webkit-gradient(linear, left top, right top, from(rgba(232, 222, 196, 0.4)), to(rgba(146, 127, 112, 0.8))), url("../assets/coffee-1-unsplash.jpg");
+  background: -webkit-linear-gradient(left, rgba(232, 222, 196, 0.4), rgba(146, 127, 112, 0.8)), url("../assets/coffee-1-unsplash.jpg");
+  background: -o-linear-gradient(left, rgba(232, 222, 196, 0.4), rgba(146, 127, 112, 0.8)), url("../assets/coffee-1-unsplash.jpg");
+  background: linear-gradient(90deg, rgba(232, 222, 196, 0.4), rgba(146, 127, 112, 0.8)), url("../assets/coffee-1-unsplash.jpg");
+  background-position: 0 center;
+  background-size: cover;
+  padding: 30px 0 0 0; }
+
+main {
+  background: -webkit-gradient(linear, left top, right top, from(rgba(232, 222, 196, 0.6)), to(rgba(146, 127, 112, 0.8))), url("../assets/coffee-4-unsplash.jpg");
+  background: -webkit-linear-gradient(left, rgba(232, 222, 196, 0.6), rgba(146, 127, 112, 0.8)), url("../assets/coffee-4-unsplash.jpg");
+  background: -o-linear-gradient(left, rgba(232, 222, 196, 0.6), rgba(146, 127, 112, 0.8)), url("../assets/coffee-4-unsplash.jpg");
+  background: linear-gradient(90deg, rgba(232, 222, 196, 0.6), rgba(146, 127, 112, 0.8)), url("../assets/coffee-4-unsplash.jpg");
+  background-size: cover; }
+
 .title {
   text-align: center;
   position: relative; }
   .title h1 {
-    margin: 25px 0 0; }
+    margin: 0; }
     .title h1 a {
       color: #141414;
       font-family: "Josefin Sans", sans-serif;
@@ -204,7 +220,7 @@ a {
       font-weight: bold;
       letter-spacing: 3px;
       text-decoration: none;
-      text-shadow: 1px 1px #927F70;
+      text-shadow: 1.5px 1.5px #E8DEC4;
       text-transform: uppercase; }
       .title h1 a span {
         font-size: 6rem; }
@@ -215,7 +231,7 @@ a {
     line-height: 1.5;
     margin: 0;
     color: #141414;
-    text-shadow: 1px 1px #927F70; }
+    text-shadow: 1px 1px #E8DEC4; }
 
 .narrow {
   display: none; }
@@ -245,14 +261,17 @@ a {
     display: none; } }
 
 .help {
-  color: #E86100;
+  background-color: #141414;
+  border-radius: 50%;
+  color: #E8DEC4;
   display: inline-block;
   font-size: 3rem;
   margin: 0;
-  padding: 10px;
+  padding: 5px;
   position: absolute;
   top: 20px;
-  right: 20px; }
+  right: 20px;
+  text-shadow: 1px 1px #927F70; }
 
 .appInstructions {
   font-family: "Rum Raisin", sans-serif;
@@ -300,6 +319,12 @@ a {
   border-color: #E86100;
   border-style: solid;
   border-width: 5px;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(232, 222, 196, 0.3)), to(rgba(146, 127, 112, 0.7))), url("../assets/coffee-2-unsplash.jpg");
+  background: -webkit-linear-gradient(left, rgba(232, 222, 196, 0.3), rgba(146, 127, 112, 0.7)), url("../assets/coffee-2-unsplash.jpg");
+  background: -o-linear-gradient(left, rgba(232, 222, 196, 0.3), rgba(146, 127, 112, 0.7)), url("../assets/coffee-2-unsplash.jpg");
+  background: linear-gradient(90deg, rgba(232, 222, 196, 0.3), rgba(146, 127, 112, 0.7)), url("../assets/coffee-2-unsplash.jpg");
+  background-size: cover;
+  background-position: center center;
   border-radius: 20px;
   padding: 125px 50px; }
   .endMessage h2 {
@@ -307,39 +332,21 @@ a {
     font-size: 2.5rem;
     letter-spacing: 2px;
     line-height: 1.5;
-    margin: 0; }
+    margin: 0;
+    text-shadow: 1px 1px #56453E; }
     .endMessage h2 span {
-      color: #E86100; }
+      color: #E86100;
+      text-shadow: 2px 2px #141414; }
   .endMessage h3 {
     font-family: "Rum Raisin", sans-serif;
     font-size: 2rem;
     letter-spacing: 2px;
     line-height: 1.5;
-    margin: 0; }
+    margin: 0;
+    text-shadow: 2px 2px #56453E; }
   .endMessage a {
-    color: #49b675; }
-
-.alert {
-  font-family: "Rum Raisin", sans-serif;
-  font-size: 1.5rem;
-  letter-spacing: 2px;
-  line-height: 1.5;
-  margin: 0;
-  border-color: #56453E;
-  border-style: solid;
-  border-width: 5px;
-  background-color: #E8DEC4;
-  color: #ab0031;
-  border-radius: 20px;
-  display: inline-block;
-  padding: 10px 25px;
-  position: absolute;
-  z-index: 50; }
-
-.closeAlert {
-  position: absolute;
-  right: 10px;
-  top: 10px; }
+    color: #49b675;
+    text-shadow: 1px 1px #141414; }
 
 @media (max-width: 1100px) {
   .appInstructions {
@@ -414,7 +421,6 @@ a {
   align-items: center;
   background-color: #141414;
   padding: 0 20px;
-  margin: 10px 0;
   width: 100%; }
   .appInput .editionInfo p {
     font-family: "Rum Raisin", sans-serif;
@@ -501,7 +507,6 @@ form {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    margin: 10px 0;
     padding: 15px 20px; } }
 
 @media (max-width: 1200px) and (max-width: 900px) {
@@ -522,15 +527,11 @@ form {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
-    flex-direction: column;
-    margin: 10px 0;
-    padding: 15px 20px; } }
+    flex-direction: column; } }
 
 @media (max-width: 1200px) and (max-width: 500px) {
-  .appInput {
-    padding: 15px 5px; }
-    .appInput .scoreCard h4 {
-      font-size: 1.25rem; } }
+  .appInput .scoreCard h4 {
+    font-size: 1.25rem; } }
 
 @media (max-width: 1200px) and (max-width: 480px) {
   .appInput .editionInfo {
@@ -587,10 +588,14 @@ form {
   padding: 5px; }
 
 .reload {
+  border-color: #56453E;
+  border-style: solid;
+  border-width: 5px;
   font-size: 1.5rem;
   line-height: 1;
   margin-top: 20px;
-  padding: 20px 30px; }
+  padding: 20px 30px;
+  text-shadow: 1px 1px #E8DEC4; }
 
 @media (max-width: 480px) {
   .submitButton {
@@ -611,7 +616,7 @@ form {
   justify-content: space-between; }
   .cards h2,
   .cards h3 {
-    font-size: 1.25rem;
+    font-size: 1.3rem;
     word-break: break-all; }
   .cards h3 {
     margin-top: 10px; }
@@ -661,14 +666,19 @@ form {
   color: #141414;
   background: #E8DEC4;
   -webkit-transform: rotateY(360deg);
-  transform: rotateY(360deg); }
+  transform: rotateY(360deg);
+  -webkit-box-shadow: 1px 1px #E86100;
+  box-shadow: 1px 1px #E86100; }
 
 .back {
   border-color: #E86100;
   border-style: solid;
   border-width: 5px;
   color: transparent;
-  background: #E8DEC4;
+  background-color: #E8DEC4;
+  background-size: contain;
+  -webkit-box-shadow: 1px 1px #56453E;
+  box-shadow: 1px 1px #56453E;
   -webkit-transform: rotateY(0deg);
   transform: rotateY(0deg); }
 
