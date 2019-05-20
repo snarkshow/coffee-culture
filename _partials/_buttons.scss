@@ -10,7 +10,7 @@
     }
 
 .submitButton{
-    padding: 5px 10px;
+    padding: 5px;
 }
 
 .reload{
@@ -20,3 +20,13 @@
     padding: 20px 30px;
 }
 
+@media (max-width: 480px){
+
+    .submitButton{
+        font-size: 1rem;
+        font-weight: bold;
+        padding: 5px;
+        width: 250px;
+    }   
+    
+}

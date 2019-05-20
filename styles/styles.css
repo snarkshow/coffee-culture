@@ -239,13 +239,13 @@ a {
 
 @media (max-width: 500px) {
   .title h1 {
-    margin: 15px 0 0; }
+    margin: 25px 0 0; }
     .title h1 a {
       font-size: 2rem; }
       .title h1 a span {
         font-size: 3rem; }
   .title p {
-    font-size: 1.25rem; } }
+    display: none; } }
 
 .help {
   color: #E86100;
@@ -403,14 +403,15 @@ a {
   align-items: center;
   background-color: #141414;
   padding: 0 20px;
-  height: 50px;
   margin: 10px 0;
   width: 100%; }
   .appInput .editionInfo p {
-    color: #E8DEC4;
     font-family: "Rum Raisin", sans-serif;
     font-size: 1.75rem;
-    letter-spacing: 2px; }
+    letter-spacing: 2px;
+    line-height: 1.5;
+    margin: 0;
+    color: #E8DEC4; }
   .appInput .editionInfo,
   .appInput form {
     margin: 0 15px; }
@@ -418,30 +419,40 @@ a {
     -ms-grid-column-align: end;
     justify-self: end; }
 
-form .user-input {
-  margin: 15px;
-  padding: 3px;
-  position: relative;
-  width: 250px; }
-  form .user-input::-webkit-input-placeholder {
-    font-family: "Josefin Sans", sans-serif;
-    font-size: 1.25rem; }
-  form .user-input:-ms-input-placeholder {
-    font-family: "Josefin Sans", sans-serif;
-    font-size: 1.25rem; }
-  form .user-input::-ms-input-placeholder {
-    font-family: "Josefin Sans", sans-serif;
-    font-size: 1.25rem; }
-  form .user-input::placeholder {
-    font-family: "Josefin Sans", sans-serif;
-    font-size: 1.25rem; }
-
-.scoreCard {
+form {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex;
+  display: flex; }
+  form .user-input {
+    margin: 15px;
+    padding: 3px;
+    position: relative;
+    width: 250px; }
+    form .user-input::-webkit-input-placeholder {
+      font-family: "Josefin Sans", sans-serif;
+      font-size: 1.25rem; }
+    form .user-input:-ms-input-placeholder {
+      font-family: "Josefin Sans", sans-serif;
+      font-size: 1.25rem; }
+    form .user-input::-ms-input-placeholder {
+      font-family: "Josefin Sans", sans-serif;
+      font-size: 1.25rem; }
+    form .user-input::placeholder {
+      font-family: "Josefin Sans", sans-serif;
+      font-size: 1.25rem; }
+
+.scoreCard {
   font-family: "Rum Raisin", sans-serif;
-  font-size: 1.75rem; }
+  font-size: 1.75rem;
+  letter-spacing: 2px;
+  line-height: 1.5;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
   .scoreCard h4 {
     margin: 0 10px;
     text-transform: uppercase; }
@@ -450,17 +461,81 @@ form .user-input {
   .scoreCard .wrongAnswer {
     color: #ab0031; }
 
-.incorrect {
-  background-image: url("../assets/cross.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  pointer-events: none; }
+@media (max-width: 1300px) {
+  .appInput .editionInfo p {
+    font-size: 1.5rem; }
+  .appInput .scoreCard {
+    font-size: 1.5rem; } }
 
-.correct {
-  background-image: url("../assets/checkmark.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  pointer-events: none; }
+@media (max-width: 1200px) {
+  .appInput .editionInfo p {
+    font-size: 1.25rem; }
+  .appInput .scoreCard {
+    font-size: 1.5rem; }
+  form {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+    form .user-input {
+      margin: 5px; } }
+
+@media (max-width: 1100px) {
+  .appInput {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin: 10px 0;
+    padding: 15px 20px; } }
+
+@media (max-width: 767px) {
+  .appInput {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin: 10px 0;
+    padding: 15px 20px; }
+  .formFlex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column; } }
+
+@media (max-width: 500px) {
+  .appInput {
+    padding: 15px 10px; }
+    .appInput .scoreCard h4 {
+      font-size: 1.25rem; } }
+
+@media (max-width: 480px) {
+  form {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column; }
+    form .user-input {
+      margin: 5px;
+      padding: 3px;
+      position: relative;
+      width: 250px; }
+      form .user-input::-webkit-input-placeholder {
+        font-family: "Josefin Sans", sans-serif;
+        font-size: 1.1rem; }
+      form .user-input:-ms-input-placeholder {
+        font-family: "Josefin Sans", sans-serif;
+        font-size: 1.1rem; }
+      form .user-input::-ms-input-placeholder {
+        font-family: "Josefin Sans", sans-serif;
+        font-size: 1.1rem; }
+      form .user-input::placeholder {
+        font-family: "Josefin Sans", sans-serif;
+        font-size: 1.1rem; } }
 
 .submitButton,
 .reload {
@@ -473,13 +548,20 @@ form .user-input {
   text-transform: uppercase; }
 
 .submitButton {
-  padding: 5px 10px; }
+  padding: 5px; }
 
 .reload {
   font-size: 1.5rem;
   line-height: 1;
   margin-top: 20px;
   padding: 20px 30px; }
+
+@media (max-width: 480px) {
+  .submitButton {
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 5px;
+    width: 250px; } }
 
 .cards {
   display: -webkit-box;
@@ -514,8 +596,9 @@ form .user-input {
   -ms-flex-pack: justify;
   justify-content: space-between;
   font-family: "Josefin Sans", sans-serif;
-  height: 140px;
+  height: 150px;
   margin: 15px;
+  min-height: 150px;
   min-width: 146px;
   width: calc(20% - 30px);
   position: relative;
@@ -579,3 +662,15 @@ form .user-input {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column; }
+
+.incorrect {
+  background-image: url("../assets/cross.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  pointer-events: none; }
+
+.correct {
+  background-image: url("../assets/checkmark.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  pointer-events: none; }
