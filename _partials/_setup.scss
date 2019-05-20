@@ -26,3 +26,10 @@ a{
     margin: 0 auto;
     width: 90%;
 }
+
+@media (max-width: 1000px){
+
+    body{
+    overflow: visible;
+}
+}

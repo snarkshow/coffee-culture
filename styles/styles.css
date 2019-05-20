@@ -195,6 +195,10 @@ a {
   margin: 0 auto;
   width: 90%; }
 
+@media (max-width: 1000px) {
+  body {
+    overflow: visible; } }
+
 .title {
   text-align: center;
   position: relative; }
@@ -461,6 +465,9 @@ form {
   .scoreCard .wrongAnswer {
     color: #ab0031; }
 
+.tagline {
+  display: none; }
+
 @media (max-width: 1300px) {
   .appInput .editionInfo p {
     font-size: 1.5rem; }
@@ -482,7 +489,7 @@ form {
     form .user-input {
       margin: 5px; } }
 
-@media (max-width: 1100px) {
+@media (max-width: 1200px) and (max-width: 1100px) {
   .appInput {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
@@ -490,14 +497,10 @@ form {
     margin: 10px 0;
     padding: 15px 20px; } }
 
-@media (max-width: 767px) {
+@media (max-width: 1200px) and (max-width: 900px) {
   .appInput {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    margin: 10px 0;
-    padding: 15px 20px; }
+    -ms-flex-pack: distribute;
+    justify-content: space-around; }
   .formFlex {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -507,22 +510,37 @@ form {
     -ms-flex-direction: column;
     flex-direction: column; } }
 
-@media (max-width: 500px) {
+@media (max-width: 1200px) and (max-width: 767px) {
   .appInput {
-    padding: 15px 10px; }
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin: 10px 0;
+    padding: 15px 20px; } }
+
+@media (max-width: 1200px) and (max-width: 500px) {
+  .appInput {
+    padding: 15px 5px; }
     .appInput .scoreCard h4 {
       font-size: 1.25rem; } }
 
-@media (max-width: 480px) {
+@media (max-width: 1200px) and (max-width: 480px) {
+  .appInput .editionInfo {
+    text-align: center;
+    width: 250px; }
+    .appInput .editionInfo p {
+      font-size: 1.25rem; }
+  .appInput .scoreCard {
+    font-size: 1.25rem; }
   form {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column; }
     form .user-input {
-      margin: 5px;
-      padding: 3px;
-      position: relative;
+      margin: 0 10px;
+      padding: 5px;
       width: 250px; }
       form .user-input::-webkit-input-placeholder {
         font-family: "Josefin Sans", sans-serif;
@@ -535,7 +553,18 @@ form {
         font-size: 1.1rem; }
       form .user-input::placeholder {
         font-family: "Josefin Sans", sans-serif;
-        font-size: 1.1rem; } }
+        font-size: 1.1rem; }
+  .formFlex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 100%; }
+  .tagline {
+    display: block; } }
 
 .submitButton,
 .reload {
@@ -560,6 +589,7 @@ form {
   .submitButton {
     font-size: 1rem;
     font-weight: bold;
+    margin: 0 10px;
     padding: 5px;
     width: 250px; } }
 
@@ -599,7 +629,7 @@ form {
   height: 150px;
   margin: 15px;
   min-height: 150px;
-  min-width: 146px;
+  min-width: 150px;
   width: calc(20% - 30px);
   position: relative;
   -webkit-perspective: 800px;
