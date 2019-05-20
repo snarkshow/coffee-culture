@@ -96,6 +96,11 @@
 }
 
 @media (max-width: 750px){
+
+    .endMessage{
+        padding: 75px 50px;
+    }
+
     .help{
         position: absolute; top: 15px; right: 15px;
     }
@@ -114,6 +119,10 @@
     .help{
         font-size: 2.3rem;
         position: absolute; top: 5px; right: 5px; 
+    }
+
+    .endMessage{
+        padding: 50px 25px;
     }
 }
 
@@ -147,4 +156,15 @@
             right: 10px; top: 10px;
         }
     }
+
+    .endMessage {
+        h2{
+            @include instructionStyles(1.5rem);
+        }
+        h3{
+            @include instructionStyles(1.25rem);
+            text-shadow: 1px 1px $chocolate;
+         }   
+    }
+
 }

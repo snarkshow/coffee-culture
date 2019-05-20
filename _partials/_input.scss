@@ -137,9 +137,6 @@ form {
         }
     }   
 
-}
-@media (max-width: 480px){
-
     .appInput{
         .editionInfo{
             text-align: center;
@@ -165,15 +162,20 @@ form {
             }
         }
     }
+    
+    .tagline{
+        display: block;
+    }
+
+}
+@media (max-width: 480px){
 
     .formFlex{
         display: flex;
         flex-direction: column;
         width: 100%;
     }
+
     
-    .tagline{
-        display: block;
-    }
 }
 }
