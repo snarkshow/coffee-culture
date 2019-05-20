@@ -5,8 +5,6 @@
     justify-content: space-between;
 }
 
-// FORM CONTAINER 
-
 .appInput{
     border: 2px $mocha solid;
     display: flex;
@@ -38,6 +36,7 @@ form {
     .user-input{
         margin: 15px;
         padding: 3px;
+        position: relative;
         width: 250px;
         &::placeholder{
             font-family: $mainFont;
@@ -46,24 +45,3 @@ form {
     }
 }
 
-// KEEPING SCORE
-
-.scoreCard{
-    display: flex;
-    font-family: $taglineFont;
-    font-size: 1.75rem;
-    h4{
-        margin: 0 10px;
-        text-transform: uppercase;
-    }
-    .rightAnswers{
-        color: $green;
-        ::after{
-            color: $cream;
-            content: "/";
-        }
-    }
-    .wrongAnswers{
-        color: $red;
-    }
-}

@@ -1,3 +1,4 @@
+//APP INSTRUCTIONS 
 .help{
     color: $pumpkinSpice;
     display: inline-block;
@@ -8,8 +9,21 @@
 
 }
 
-.disableCardsOpen{
-    pointer-events: none;
+.appInstructions{
+    @include instructionStyles(2.5rem);
+    @include border($pumpkinSpice);
+    color: $cream;
+    background-color: $black;
+    border-radius: $cardBorders;
+    display: inline-block;
+    padding: 125px 50px;
+    position: relative;
+    text-shadow: 1px 1px $mocha;
+    z-index: 50;
+    .closeModal{
+        position: absolute;
+        right: 30px; top: 30px;
+    }
 }
 
 .modalOpen{
@@ -20,45 +34,89 @@
     z-index: 40;
 }
  
-.appInstructions{
-    color: $cream;
-    background-color: $black;
-    border: 5px solid $pumpkinSpice;
-    border-radius: $cardBorders;
-    font-family: $taglineFont;
-    font-size: 2.5rem;
-    letter-spacing: 2px;
-    line-height: 1.5;
-    display: inline-block;
-    padding: 125px 50px;
-    position: relative;
-    z-index: 50;
-    .closeModal{
-        position: absolute;
-        right: 30px; top: 30px;
-    }
+
+.disableCardsOpen{
+    pointer-events: none;
 }
 
+//END OF CARDS, RESTART APP
 .endMessage {
-    border: $pumpkinSpice 5px solid;
+    @include border($pumpkinSpice);
     border-radius: $cardBorders;   
     padding: 125px 50px;
     h2{
-        font-family: $taglineFont;
-        font-size: 2.5rem;
-        letter-spacing: 2px;
-        line-height: 1.5;
-        margin: 0;
+        @include instructionStyles(2.5rem);
         span{
             color: $pumpkinSpice;
         }
     }
     h3{
-        font-family: $taglineFont;
-        font-size: 2rem;
-        letter-spacing: 2px;
-        line-height: 1.5;
-        margin: 0;
+        @include instructionStyles(2rem);
+    }   
+    a{
+        color: $green;
     }
-    
+}
+
+
+//ALERT - REMEMBER TO FILL IN THE INPUT
+.alert{
+    @include instructionStyles(1.5rem);
+    @include border($chocolate);
+    background-color: $cream;
+    color: $red;
+    border-radius: $cardBorders;
+    display: inline-block;
+    padding: 10px 25px;
+    position: absolute;
+    z-index: 50;
+}
+
+.closeAlert{
+        position: absolute;
+        right: 10px; top: 10px;
+}
+
+//MEDIA QUERIES
+
+@media (max-width: 1100px){
+    .appInstructions{     
+        margin: 5%;
+        padding: 75px 50px;
+    }
+}
+
+@media (max-width: 650px){
+    .appInstructions{     
+        font-size: 1.75rem;
+        margin: 10%;
+        padding: 50px 25px;
+        .closeModal{
+            right: 10px; top: 10px;
+        }
+    }
+}
+@media (max-width: 480px){
+    .appInstructions{     
+        font-size: 1.5rem;
+        line-height: 2;
+        margin: 0 auto;
+        padding: 25px 15px;
+        .closeModal{
+            right: 10px; top: 10px;
+        }
+    }
+}
+@media (max-width: 320px){
+    .appInstructions{     
+        font-size: 1.5rem;
+        height: 50vh;
+        line-height: 2;
+        
+        padding: 25px 15px;
+        width: 300px;
+        .closeModal{
+            right: 10px; top: 10px;
+        }
+    }
 }

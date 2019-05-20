@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,8 +14,8 @@
         <header>
             <div class="wrapper">
                 <div class="title">
-                    <h1><span>C</span>offee <span>C</span>ulture</h1>
-                    <p>Travelling the world? Learn how to order coffee like a local!</p>
+                    <h1><a href="index.html"><span>C</span>offee <span>C</span>ulture</a></h1>
+                    <p>Travelling the world? <span class="narrow"></span>Learn how to order coffee like a local!</p>
                 </div>
                 <!-- <h1 class="appTitle">coffee + culture </h1> -->
                 <div class="helpButton">
@@ -27,7 +23,7 @@
                 </div>
                 <div class="disableCards">
                     <div class="modalOpen" id="modal1">
-                        <div class="appInstructions">
+                        <div class="appInstructions visuallyhidden">
                             <ul>
                                 <li><i class="fas fa-times closeModal"></i></li>
                                 <li>Click a blank card to flip it over</li>
@@ -49,13 +45,17 @@
                         <!-- add label -->
                         <form>
                             <label for="guess" class="visuallyhidden">Type your guess here</label>
-                            <input name="guess" id="guess" required="" autocomplete="off" class="user-input" type="text" placeholder="Type your guess" oninvalid="this.setCustomValidity('Please type in your guess!')">
+                            <input name="guess" id="guess" required="" autocomplete="off" class="user-input" type="text" placeholder="Type your guess">
+                            <div class="alert visuallyhidden" id="alert1">
+                                <i class="fas fa-times closeAlert"></i>
+                                <p>Please type in your guess!</p>
+                            </div>
                             <button type="submit" class="submitButton">Here's My Guess!</button>
                         </form>
                     </section>
                     <div class="scoreCard">
-                        <h4 class="rightAnswers"></h4>
-                        <h4 class="wrongAnswers"></h4>
+                        <h4 class="rightAnswer"></h4>
+                        <h4 class="wrongAnswer"></h4>
                     </div>
                 </section>
             <div class="wrapper">

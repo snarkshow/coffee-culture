@@ -1,94 +1,78 @@
 
 .cards{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-
+	display: flex;
+  	flex-wrap: wrap;
+	justify-content: space-between;
+	h2,  
+	h3{
+		overflow-wrap: break-word;
+		word-wrap: break-word;
+		font-size: 1.25rem;
+	}
+	h3{
+		margin-top: 10px;
+	}
 }
 
 .cards li{
     align-items: center;
-    border-radius: 20px;
+    border-radius: $cardBorders;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    font-family: sans-serif;
+    font-family: $mainFont;
     height: 140px;
-    margin: 15px;
-    width: calc(20% - 40px);
+	margin: 15px;
+	min-width: 146px;
+    width: calc(20% - 30px);
     position: relative;
     perspective: 800px; 
     text-align: center;
     transform-style: preserve-3d;
 }
 
+//card flip styling
 
+.front, .back {
+	position: absolute;
+	height:100%;
+	width:100%;
+	transition:all .5s;
+	backface-visibility:hidden;  
+}
 
-// --------------------
+.front {
+	@include border($chocolate);
+	color: $black;
+	background:$cream;
+	transform:rotateY(360deg);
+}
 
-    .front, .back {
-      /* some styling for each card */
-      position: absolute;
-      height:100%;
-      width:100%;
-      transition:all .5s;
-      backface-visibility:hidden;  /*This means that when it is flipped over, we don't see the back */
-    }
+.back {
+	@include border($pumpkinSpice);
+	color: transparent;
+	background:$cream;
+	transform:rotateY(0deg);
+}
 
-     .front {
-      color: $black;
-      background:$cream;
-      border: 5px solid $chocolate;
-      transform:rotateY(360deg);
-  
-    }
+.nobox{
+	visibility: hidden;
+}
 
-    .back {
-      color: transparent;
-      background:$cream;
-      border: 5px solid $pumpkinSpice;
-      transform:rotateY(0deg);
-    }
+.inactive{
+	background: linear-gradient(45deg, $black, $grey, $cream);
+	pointer-events: none;
+}
 
-    .nobox{
-        visibility: hidden;
-    }
+.complete{
+	@include border($black);
+	display: flex;
+	pointer-events: none;
+}
 
-    .red{
-      background-color: red;
-    }
+.inputFlex{
+	display: flex;
+	flex-direction: column;
+}
 
-    .rightAnswer{
-      color: $black;
-    }
-
-    .incorrect{
-      background-image: url("../assets/cross.png");
-      background-repeat: no-repeat; 
-      background-position: center center;
-      pointer-events: none;
-    }
-
-    .correct{
-        background-image: url("../assets/checkmark.png");
-        background-repeat: no-repeat; 
-        background-position: center center;
-        pointer-events: none;
-        
-    }
-
-    .inactive{
-        background: linear-gradient(45deg, $black, $grey, $cream);
-        pointer-events: none;
-    }
-
-    .complete{
-        border: 5px solid $black;
-        display: flex;
-        pointer-events: none;
-    }
-
-    .inputFlex{
-      display: flex;
-      flex-direction: column;
-    }
+    

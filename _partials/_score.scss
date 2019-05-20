@@ -1,0 +1,33 @@
+
+.scoreCard{
+    display: flex;
+    font-family: $taglineFont;
+    font-size: 1.75rem;
+    h4{
+        margin: 0 10px;
+        text-transform: uppercase;
+    }
+    .rightAnswer{
+        color: $green;
+    }
+    .wrongAnswer{
+        color: $red;
+    }
+}
+
+//score-keeping card styles
+
+.incorrect{
+	background-image: url("../assets/cross.png");
+	background-repeat: no-repeat; 
+	background-position: center center;
+	pointer-events: none;
+}
+
+.correct{
+	background-image: url("../assets/checkmark.png");
+	background-repeat: no-repeat; 
+	background-position: center center;
+	pointer-events: none;
+	
+}

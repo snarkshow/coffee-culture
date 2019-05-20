@@ -3,29 +3,71 @@
 .title{
     text-align: center;
     position: relative;
-    h1 {
-        font-family: $mainFont;
-        font-size: 4rem;
-        font-weight: bold;
-        letter-spacing: 3px;
+    h1{
         margin: 25px 0 0;
+        a{
+        @include h1Styles(4rem);
+        text-decoration: none;
         text-shadow: 1px 1px $mocha;
         text-transform: uppercase;
-        span{
-            font-size: 6rem;
-        }   
-    }  
+            span{
+                font-size: 6rem;
+            }   
+        }  
+    }
+    
     p{
-        font-family: $taglineFont;
-        font-size: 1.80rem;
-        letter-spacing: 2px;
-        margin: 0;
+        @include instructionStyles(1.8rem);
+        color: $black;
+        text-shadow: 1px 1px $mocha;
     } 
 }
 
-
-h2,
-h3{
-    font-size: 1.25rem;
+.narrow{
+    display: none;
 }
 
+@media (max-width: 890px){
+    
+    .title{
+        h1{
+            margin: 15px 0 0;
+            a{
+                font-size: 3rem;
+                span{
+                    font-size: 5rem;
+                }   
+            }  
+        }
+        p{
+            font-size: 1.5rem;
+        } 
+    }
+}
+
+@media (max-width: 650px){
+    
+    .narrow{
+        display: block;
+    }
+}
+
+
+@media (max-width: 500px){
+    
+    .title{
+        h1{
+            margin: 15px 0 0;
+            a{
+            font-size: 2rem;
+                span{
+                    font-size: 3rem;
+                }   
+            }  
+        }
+        p{
+            font-size: 1.25rem;
+        } 
+    }
+    
+}

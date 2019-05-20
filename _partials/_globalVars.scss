@@ -14,3 +14,27 @@ $taglineFont: 'Rum Raisin', sans-serif;
 
 //border styles
 $cardBorders: 20px;
+
+//mixins
+
+@mixin h1Styles($size){
+    color: $black;
+    font-family: $mainFont;
+    font-size: $size;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+@mixin instructionStyles($bodySize) {
+    font-family: $taglineFont;
+    font-size: $bodySize;
+    letter-spacing: 2px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+@mixin border($color){
+    border-color: $color;
+    border-style: solid;
+    border-width: 5px;
+}

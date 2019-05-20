@@ -154,6 +154,7 @@ $(function () {
         }
     })
 
+
     // Flip a card over
     $(`.back`).on("click keypress", function () {
         if (a11yClick(event) === true){
@@ -190,10 +191,10 @@ $(function () {
         console.log(score);
         if (answer === `right`){
             score.right = score.right + 1;
-            $(`.rightAnswers`).text(`${score.right} right`);
+            $(`.rightAnswer`).text(`${score.right} right`);
         } else {
             score.wrong = score.wrong + 1;
-            $(`.wrongAnswers`).text(`${score.wrong} wrong`);
+            $(`.wrongAnswer`).text(`${score.wrong} wrong`);
         }
         console.log(score);
     }
@@ -209,39 +210,45 @@ $(function () {
                     $(`.clicked`).addClass(`incorrect`);
                 }
             })
-        } else{
-            if (correction === `noshow`){
-                $(`.clicked`).addClass(`correct`);
-            }
+        } else if (correction === `noshow`) {
+            $(`.clicked`).addClass(`correct`);
+        } 
+    }
+    
+    $(`.closeAlert`).on(`click`, function () {
+        $(`.alert`).addClass(`visuallyhidden`);
+    })
+
+    function error(message){
+        if (message === `show`){
+            $(`.alert`).removeClass(`visuallyhidden`);
+            $(`li.back`).removeClass(`inactive`);
+            $(`li`).removeClass(`clicked`);
+            $(`h2`).addClass(`nobox`);
         }
     }
 
-    function required(inputtx) {
-        if (inputtx.value.length == 0) {
-            return false;
-        }
-        return true;
-    } 
-
     $("form").on("submit keypress", function (event) {
-        if (a11yClick(event) === true) {
+        if (a11yClick(event) === true){
             event.preventDefault();
-            //when you submit the match, the flipped card is taken out of play
+
             $(`li.front`).addClass(`complete`);
-                //when you submit the match, the other cards that were inactive come back into play
             $(`li.back`).removeClass(`inactive`);
-            //saves the user input
+
             let userInput = $("input").val();
- 
+            if (userInput.length === 0){
+                error(`show`);
+            }
             let listItem = $(`.clicked`).find(`h2`).text();
-            let thisCard = germanFlashcards.filter((property) => {
+
+            let thisCard = germanFlashcards.filter((property) => { 
                 if (listItem === property.germanWord) {
                     return property.englishWord
                 }
             })
             thisCard = thisCard[0].englishWord;
-            if (userInput.toLowerCase() === thisCard) {
-                // adds to your correct score
+
+             if (userInput.toLowerCase() === thisCard){
                 keepScore(`right`);
                 rightAnswer(`noshow`);
                 alert(`match!!!`);
@@ -261,29 +268,25 @@ $(function () {
                 $("input").val("");
             }
         }
-    
-        if (score.right + score.wrong === germanFlashcards.length) {
-            $(`.cards`).addClass(`visuallyhidden`);
-            $(`form`).addClass(`visuallyhidden`);
-            $(`.endMessage`).removeClass(`visuallyhidden`);
-            $(`.endMessage`).append
-                (`<h2><span>You're done!</span></h2>
-                <h2>You got ${score.right} answer(s) right and ${score.wrong} answer(s) wrong.</h2>
-                <h3>Need more than coffee? Check out <a href="https://www.duolingo.com/course/de/en/Learn-German" target="_blank"> Duolingo's German module!</a></h3>
-                <button type="reload" class="reload">I want to try again!</button>`);
-        }
-
-
-        $(`.reload`).on(`click`, function () {
-            console.log(`button clicked`)
-            location.reload();
-        })
-
+            if (score.right + score.wrong === germanFlashcards.length) {
+                console.log(`score`);
+                $(`.cards`).addClass(`visuallyhidden`);
+                $(`form`).addClass(`visuallyhidden`);
+                $(`.endMessage`).removeClass(`visuallyhidden`);
+                $(`.endMessage`).append
+                    (`<h2><span>You're done!</span></h2>
+                    <h2>You got ${score.right} answer(s) right and ${score.wrong} answer(s) wrong.</h2>
+                    <h3>Need more than coffee? Check out <a href="https://www.duolingo.com/course/de/en/Learn-German" target="_blank"> Duolingo's German module!</a></h3>
+                    <button type="reload" class="reload">I want to try again!</button>`);
+            }
+            $(`.reload`).on(`click`, function () {
+                console.log(`button clicked`)
+                location.reload();
+            })
+        })    
     });
 
-    
-    
 
-})
+
     
 

@@ -199,24 +199,53 @@ a {
   text-align: center;
   position: relative; }
   .title h1 {
-    font-family: "Josefin Sans", sans-serif;
-    font-size: 4rem;
-    font-weight: bold;
-    letter-spacing: 3px;
-    margin: 25px 0 0;
-    text-shadow: 1px 1px #927F70;
-    text-transform: uppercase; }
-    .title h1 span {
-      font-size: 6rem; }
+    margin: 25px 0 0; }
+    .title h1 a {
+      color: #141414;
+      font-family: "Josefin Sans", sans-serif;
+      font-size: 4rem;
+      font-weight: bold;
+      letter-spacing: 3px;
+      text-decoration: none;
+      text-shadow: 1px 1px #927F70;
+      text-transform: uppercase; }
+      .title h1 a span {
+        font-size: 6rem; }
   .title p {
     font-family: "Rum Raisin", sans-serif;
-    font-size: 1.80rem;
+    font-size: 1.8rem;
     letter-spacing: 2px;
-    margin: 0; }
+    line-height: 1.5;
+    margin: 0;
+    color: #141414;
+    text-shadow: 1px 1px #927F70; }
 
-h2,
-h3 {
-  font-size: 1.25rem; }
+.narrow {
+  display: none; }
+
+@media (max-width: 890px) {
+  .title h1 {
+    margin: 15px 0 0; }
+    .title h1 a {
+      font-size: 3rem; }
+      .title h1 a span {
+        font-size: 5rem; }
+  .title p {
+    font-size: 1.5rem; } }
+
+@media (max-width: 650px) {
+  .narrow {
+    display: block; } }
+
+@media (max-width: 500px) {
+  .title h1 {
+    margin: 15px 0 0; }
+    .title h1 a {
+      font-size: 2rem; }
+      .title h1 a span {
+        font-size: 3rem; }
+  .title p {
+    font-size: 1.25rem; } }
 
 .help {
   color: #E86100;
@@ -228,8 +257,27 @@ h3 {
   top: 20px;
   right: 20px; }
 
-.disableCardsOpen {
-  pointer-events: none; }
+.appInstructions {
+  font-family: "Rum Raisin", sans-serif;
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  line-height: 1.5;
+  margin: 0;
+  border-color: #E86100;
+  border-style: solid;
+  border-width: 5px;
+  color: #E8DEC4;
+  background-color: #141414;
+  border-radius: 20px;
+  display: inline-block;
+  padding: 125px 50px;
+  position: relative;
+  text-shadow: 1px 1px #927F70;
+  z-index: 50; }
+  .appInstructions .closeModal {
+    position: absolute;
+    right: 30px;
+    top: 30px; }
 
 .modalOpen {
   -webkit-box-align: center;
@@ -248,26 +296,13 @@ h3 {
   left: 0;
   z-index: 40; }
 
-.appInstructions {
-  color: #E8DEC4;
-  background-color: #141414;
-  border: 5px solid #E86100;
-  border-radius: 20px;
-  font-family: "Rum Raisin", sans-serif;
-  font-size: 2.5rem;
-  letter-spacing: 2px;
-  line-height: 1.5;
-  display: inline-block;
-  padding: 125px 50px;
-  position: relative;
-  z-index: 50; }
-  .appInstructions .closeModal {
-    position: absolute;
-    right: 30px;
-    top: 30px; }
+.disableCardsOpen {
+  pointer-events: none; }
 
 .endMessage {
-  border: #E86100 5px solid;
+  border-color: #E86100;
+  border-style: solid;
+  border-width: 5px;
   border-radius: 20px;
   padding: 125px 50px; }
   .endMessage h2 {
@@ -284,6 +319,65 @@ h3 {
     letter-spacing: 2px;
     line-height: 1.5;
     margin: 0; }
+  .endMessage a {
+    color: #49b675; }
+
+.alert {
+  font-family: "Rum Raisin", sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  line-height: 1.5;
+  margin: 0;
+  border-color: #56453E;
+  border-style: solid;
+  border-width: 5px;
+  background-color: #E8DEC4;
+  color: #ab0031;
+  border-radius: 20px;
+  display: inline-block;
+  padding: 10px 25px;
+  position: absolute;
+  z-index: 50; }
+
+.closeAlert {
+  position: absolute;
+  right: 10px;
+  top: 10px; }
+
+@media (max-width: 1100px) {
+  .appInstructions {
+    margin: 5%;
+    padding: 75px 50px; } }
+
+@media (max-width: 650px) {
+  .appInstructions {
+    font-size: 1.75rem;
+    margin: 10%;
+    padding: 50px 25px; }
+    .appInstructions .closeModal {
+      right: 10px;
+      top: 10px; } }
+
+@media (max-width: 480px) {
+  .appInstructions {
+    font-size: 1.5rem;
+    line-height: 2;
+    margin: 0 auto;
+    padding: 25px 15px; }
+    .appInstructions .closeModal {
+      right: 10px;
+      top: 10px; } }
+
+@media (max-width: 320px) {
+  .appInstructions {
+    font-size: 1.5rem;
+    height: 50vh;
+    line-height: 2;
+    padding: 25px 15px;
+    width: 300px; }
+    .appInstructions .closeModal {
+      right: 10px;
+      top: 10px; } }
 
 .formFlex {
   -webkit-box-align: center;
@@ -327,6 +421,7 @@ h3 {
 form .user-input {
   margin: 15px;
   padding: 3px;
+  position: relative;
   width: 250px; }
   form .user-input::-webkit-input-placeholder {
     font-family: "Josefin Sans", sans-serif;
@@ -350,13 +445,22 @@ form .user-input {
   .scoreCard h4 {
     margin: 0 10px;
     text-transform: uppercase; }
-  .scoreCard .rightAnswers {
+  .scoreCard .rightAnswer {
     color: #49b675; }
-    .scoreCard .rightAnswers ::after {
-      color: #E8DEC4;
-      content: "/"; }
-  .scoreCard .wrongAnswers {
+  .scoreCard .wrongAnswer {
     color: #ab0031; }
+
+.incorrect {
+  background-image: url("../assets/cross.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  pointer-events: none; }
+
+.correct {
+  background-image: url("../assets/checkmark.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  pointer-events: none; }
 
 .submitButton,
 .reload {
@@ -368,9 +472,14 @@ form .user-input {
   font-weight: bold;
   text-transform: uppercase; }
 
+.submitButton {
+  padding: 5px 10px; }
+
 .reload {
-  font-size: 2rem;
-  padding: 20px 40px; }
+  font-size: 1.5rem;
+  line-height: 1;
+  margin-top: 20px;
+  padding: 20px 30px; }
 
 .cards {
   display: -webkit-box;
@@ -381,6 +490,13 @@ form .user-input {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between; }
+  .cards h2,
+  .cards h3 {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    font-size: 1.25rem; }
+  .cards h3 {
+    margin-top: 10px; }
 
 .cards li {
   -webkit-box-align: center;
@@ -397,10 +513,11 @@ form .user-input {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  font-family: sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   height: 140px;
   margin: 15px;
-  width: calc(20% - 40px);
+  min-width: 146px;
+  width: calc(20% - 30px);
   position: relative;
   -webkit-perspective: 800px;
   perspective: 800px;
@@ -409,7 +526,6 @@ form .user-input {
   transform-style: preserve-3d; }
 
 .front, .back {
-  /* some styling for each card */
   position: absolute;
   height: 100%;
   width: 100%;
@@ -417,43 +533,28 @@ form .user-input {
   -o-transition: all .5s;
   transition: all .5s;
   -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  /*This means that when it is flipped over, we don't see the back */ }
+  backface-visibility: hidden; }
 
 .front {
+  border-color: #56453E;
+  border-style: solid;
+  border-width: 5px;
   color: #141414;
   background: #E8DEC4;
-  border: 5px solid #56453E;
   -webkit-transform: rotateY(360deg);
   transform: rotateY(360deg); }
 
 .back {
+  border-color: #E86100;
+  border-style: solid;
+  border-width: 5px;
   color: transparent;
   background: #E8DEC4;
-  border: 5px solid #E86100;
   -webkit-transform: rotateY(0deg);
   transform: rotateY(0deg); }
 
 .nobox {
   visibility: hidden; }
-
-.red {
-  background-color: red; }
-
-.rightAnswer {
-  color: #141414; }
-
-.incorrect {
-  background-image: url("../assets/cross.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  pointer-events: none; }
-
-.correct {
-  background-image: url("../assets/checkmark.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  pointer-events: none; }
 
 .inactive {
   background: -webkit-linear-gradient(45deg, #141414, #b8bbbc, #E8DEC4);
@@ -462,7 +563,9 @@ form .user-input {
   pointer-events: none; }
 
 .complete {
-  border: 5px solid #141414;
+  border-color: #141414;
+  border-style: solid;
+  border-width: 5px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
