@@ -180,9 +180,6 @@ template {
 html {
   font-size: 16px; }
 
-body {
-  overflow: hidden; }
-
 ul {
   list-style-type: none;
   margin: 0;
@@ -194,10 +191,6 @@ a {
 .wrapper {
   margin: 0 auto;
   width: 90%; }
-
-@media (max-width: 1000px) {
-  body {
-    overflow: visible; } }
 
 .title {
   text-align: center;
@@ -353,6 +346,12 @@ a {
     margin: 5%;
     padding: 75px 50px; } }
 
+@media (max-width: 750px) {
+  .help {
+    position: absolute;
+    top: 15px;
+    right: 15px; } }
+
 @media (max-width: 650px) {
   .appInstructions {
     font-size: 1.75rem;
@@ -360,9 +359,17 @@ a {
     padding: 50px 25px; }
     .appInstructions .closeModal {
       right: 10px;
-      top: 10px; } }
+      top: 10px; }
+  .help {
+    font-size: 2.3rem;
+    position: absolute;
+    top: 5px;
+    right: 5px; } }
 
 @media (max-width: 480px) {
+  .help {
+    font-size: 2rem;
+    padding: 5px; }
   .appInstructions {
     font-size: 1.5rem;
     line-height: 2;
