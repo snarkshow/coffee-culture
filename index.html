@@ -18,46 +18,45 @@
                     <p>Travelling the world? <span class="narrow"></span>Learn how to order coffee like a local!</p>
                 </div>
 
-                <div class="helpButton">
+                <div class="help-button">
                     <i class="far fa-question-circle help" aria-hidden="true"></i>
                     <label for="help" class="visuallyhidden">Click here for help</label>
                 </div>
-                <div class="disableCards">
-                    <div class="modalOpen" id="modal1">
-                        <div class="appInstructions">
+                <!-- <div class="disable-cards"> -->
+                    <div class="modal-open" id="modal1">
+                        <div class="app-instructions">
                             <ul>
                                 <li>
-                                    <i class="fas fa-times closeModal" aria-hidden="true"></i>
-                                    <label for="closeModal" class="visuallyhidden">Click here to close the help window</label>
+                                    <i class="fas fa-times close-modal" aria-hidden="true"></i>
+                                    <label for="close-modal" class="visuallyhidden">Click here to close the help window</label>
                                 </li>
                                 <li>Click a blank card to flip it over</li>
                                 <li>Guess the English translation and type your guess into the box</li>
-                                <button type="reload" class="reloadModal">Let's start over</button>
+                                <button type="reload" class="reload-modal">Let's start over</button>
                             </ul>
                         </div>
                     </div>
-                </div>
+                <!-- </div> -->
             </div>  
-            
         </header>
         <main>
-            <div class="inputFlex">
-                <section class="appInput">
-                    <section class="formFlex">
-                        <div class="editionInfo">
+            <div class="input-flex">
+                <section class="app-input">
+                    <section class="form-flex">
+                        <div class="edition-info">
                             <p>You're playing the <span class="tagline"></span>German edition 🇩🇪 </p>
                         </div>
                         <!-- add label -->
                         <form>
                             <label for="guess" class="visuallyhidden">Type your guess here</label>
                             <input name="guess" id="guess" required="" autocomplete="off" class="user-input" type="text" placeholder="Type your guess">
-                            <label for="submitButton" class="visuallyhidden">Submit guess in English.</label>
-                            <button type="submit" class="submitButton" id="submitButton">Here's My Guess!</button>
+                            <label for="submit-button" class="visuallyhidden">Submit guess in English.</label>
+                            <button type="submit" class="submit-button" id="submit-button">Here's My Guess!</button>
                         </form>
                     </section>
-                    <div class="scoreCard">
-                        <h4 class="rightAnswer"></h4>
-                        <h4 class="wrongAnswer"></h4>
+                    <div class="score-card">
+                        <h4 class="right-answer"></h4>
+                        <h4 class="wrong-answer"></h4>
                     </div>
                 </section>       
             </div>     
@@ -65,8 +64,8 @@
                 <ul class="cards">
                     <!-- this is where the cards go -->
                 </ul>
-                <div class="endMessage visuallyhidden">
-                    <a class="outside-link" href=""></a>
+                <div class="end-message visuallyhidden">
+                    <!-- end modal and reload goes here -->
                 </div>
             </div>
         </main>
@@ -74,7 +73,7 @@
             <p>Copyright &copy; 2019 Laura Chuang</p>
         </footer>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="script.js"> </script>
     </body>
 </html>

@@ -11,7 +11,7 @@
     text-shadow: 1px 1px $mocha;
 }
 
-.appInstructions{
+.app-instructions{
     @include instructionStyles(2.5rem);
     @include border($pumpkinSpice);
     color: $cream;
@@ -22,13 +22,13 @@
     position: relative;
     text-shadow: 1px 1px $mocha;
     z-index: 50;
-    .closeModal{
+    .close-modal{
         position: absolute;
         right: 30px; top: 30px;
     }
 }
 
-.modalOpen{
+.modal-open{
     align-items: center;
     display: flex;
     justify-content: center;
@@ -42,7 +42,7 @@
 }
 
 //END OF CARDS, RESTART APP
-.endMessage {
+.end-message{
     @include border($pumpkinSpice);
     background: linear-gradient(90deg, rgba(232, 222, 196, 0.3), rgba(146, 127, 112, 0.7)), url("../assets/coffee-2-unsplash.jpg");
     background-size: cover;
@@ -70,7 +70,7 @@
 //MEDIA QUERIES
 
 @media (max-width: 1100px){
-    .appInstructions{     
+    .app-instructions{     
         margin: 5%;
         padding: 75px 50px;
     }
@@ -78,7 +78,7 @@
 
 @media (max-width: 750px){
 
-    .endMessage{
+    .end-message{
         padding: 75px 50px;
     }
 
@@ -88,11 +88,11 @@
 }
 
 @media (max-width: 650px){
-    .appInstructions{     
+    .app-instructions{     
         font-size: 1.75rem;
         margin: 10%;
         padding: 50px 25px;
-        .closeModal{
+        .close-modal{
             right: 10px; top: 10px;
         }
     }
@@ -102,7 +102,7 @@
         position: absolute; top: 5px; right: 5px; 
     }
 
-    .endMessage{
+    .end-message{
         padding: 50px 25px;
     }
 }
@@ -115,28 +115,28 @@
         padding: 5px;
     }
 
-    .appInstructions{     
+    .app-instructions{     
         font-size: 1.5rem;
         line-height: 2;
         margin: 0 auto;
         padding: 25px 15px;
-        .closeModal{
+        .close-modal{
             right: 10px; top: 10px;
         }
     }
 }
 @media (max-width: 320px){
-    .appInstructions{     
+    .app-instructions{     
         font-size: 1.5rem;
         line-height: 2;
         padding: 50px 15px;
         width: 300px;
-        .closeModal{
+        .close-modal{
             right: 10px; top: 10px;
         }
     }
 
-    .endMessage {
+    .end-message {
         h2{
             @include instructionStyles(1.5rem);
         }

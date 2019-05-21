@@ -1,6 +1,6 @@
-.submitButton,
+.submit-button,
 .reload,
-.reloadModal{
+.reload-modal{
         background-color: $pumpkinSpice;
         border: none;
         color: $black;
@@ -10,11 +10,11 @@
         text-transform: uppercase;
     }
 
-.submitButton{
+.submit-button{
     padding: 5px;
 }
 
-.reloadModal{
+.reload-modal{
     @include border($chocolate);
     font-size: 1.25rem;
     margin-top: 20px;
@@ -33,7 +33,7 @@
 
 @media (max-width: 500px){
 
-    .submitButton{
+    .submit-button{
         font-size: 1rem;
         font-weight: bold;
         margin: 0 10px;

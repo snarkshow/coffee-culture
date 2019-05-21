@@ -6,6 +6,4 @@
 
 
 
-
-- trim input of blank spaces
-- Add padding to the modal for mobile cause it's leaking out
+Change HTML and CSS to kebab-case!!!

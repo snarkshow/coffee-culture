@@ -266,7 +266,7 @@ header {
   right: 20px;
   text-shadow: 1px 1px #927F70; }
 
-.appInstructions {
+.app-instructions {
   font-family: "Rum Raisin", sans-serif;
   font-size: 2.5rem;
   letter-spacing: 2px;
@@ -283,12 +283,12 @@ header {
   position: relative;
   text-shadow: 1px 1px #927F70;
   z-index: 50; }
-  .appInstructions .closeModal {
+  .app-instructions .close-modal {
     position: absolute;
     right: 30px;
     top: 30px; }
 
-.modalOpen {
+.modal-open {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -308,7 +308,7 @@ header {
 .disableCardsOpen {
   pointer-events: none; }
 
-.endMessage {
+.end-message {
   border-color: #E86100;
   border-style: solid;
   border-width: 5px;
@@ -320,34 +320,34 @@ header {
   background-position: center center;
   border-radius: 20px;
   padding: 125px 50px; }
-  .endMessage h2 {
+  .end-message h2 {
     font-family: "Rum Raisin", sans-serif;
     font-size: 2.5rem;
     letter-spacing: 2px;
     line-height: 1.5;
     margin: 0;
     text-shadow: 1px 1px #56453E; }
-    .endMessage h2 span {
+    .end-message h2 span {
       color: #E86100;
       text-shadow: 2px 2px #141414; }
-  .endMessage h3 {
+  .end-message h3 {
     font-family: "Rum Raisin", sans-serif;
     font-size: 2rem;
     letter-spacing: 2px;
     line-height: 1.5;
     margin: 0;
     text-shadow: 2px 2px #56453E; }
-  .endMessage a {
+  .end-message a {
     color: #49b675;
     text-shadow: 1px 1px #141414; }
 
 @media (max-width: 1100px) {
-  .appInstructions {
+  .app-instructions {
     margin: 5%;
     padding: 75px 50px; } }
 
 @media (max-width: 750px) {
-  .endMessage {
+  .end-message {
     padding: 75px 50px; }
   .help {
     position: absolute;
@@ -355,11 +355,11 @@ header {
     right: 15px; } }
 
 @media (max-width: 650px) {
-  .appInstructions {
+  .app-instructions {
     font-size: 1.75rem;
     margin: 10%;
     padding: 50px 25px; }
-    .appInstructions .closeModal {
+    .app-instructions .close-modal {
       right: 10px;
       top: 10px; }
   .help {
@@ -367,38 +367,38 @@ header {
     position: absolute;
     top: 5px;
     right: 5px; }
-  .endMessage {
+  .end-message {
     padding: 50px 25px; } }
 
 @media (max-width: 480px) {
   .help {
     font-size: 2rem;
     padding: 5px; }
-  .appInstructions {
+  .app-instructions {
     font-size: 1.5rem;
     line-height: 2;
     margin: 0 auto;
     padding: 25px 15px; }
-    .appInstructions .closeModal {
+    .app-instructions .close-modal {
       right: 10px;
       top: 10px; } }
 
 @media (max-width: 320px) {
-  .appInstructions {
+  .app-instructions {
     font-size: 1.5rem;
     line-height: 2;
     padding: 50px 15px;
     width: 300px; }
-    .appInstructions .closeModal {
+    .app-instructions .close-modal {
       right: 10px;
       top: 10px; }
-  .endMessage h2 {
+  .end-message h2 {
     font-family: "Rum Raisin", sans-serif;
     font-size: 1.5rem;
     letter-spacing: 2px;
     line-height: 1.5;
     margin: 0; }
-  .endMessage h3 {
+  .end-message h3 {
     font-family: "Rum Raisin", sans-serif;
     font-size: 1.25rem;
     letter-spacing: 2px;
@@ -406,7 +406,7 @@ header {
     margin: 0;
     text-shadow: 1px 1px #56453E; } }
 
-.formFlex {
+.form-flex {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -417,7 +417,7 @@ header {
   -ms-flex-pack: justify;
   justify-content: space-between; }
 
-.appInput {
+.app-input {
   border: 2px #927F70 solid;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -431,17 +431,17 @@ header {
   background-color: #141414;
   padding: 0 20px;
   width: 100%; }
-  .appInput .editionInfo p {
+  .app-input .edition-info p {
     font-family: "Rum Raisin", sans-serif;
     font-size: 1.75rem;
     letter-spacing: 2px;
     line-height: 1.5;
     margin: 0;
     color: #E8DEC4; }
-  .appInput .editionInfo,
-  .appInput form {
+  .app-input .edition-info,
+  .app-input form {
     margin: 0 15px; }
-  .appInput .scoreCard {
+  .app-input .score-card {
     -ms-grid-column-align: end;
     justify-self: end; }
 
@@ -470,7 +470,7 @@ form {
       font-family: "Josefin Sans", sans-serif;
       font-size: 1.25rem; }
 
-.scoreCard {
+.score-card {
   font-family: "Rum Raisin", sans-serif;
   font-size: 1.75rem;
   letter-spacing: 2px;
@@ -479,27 +479,27 @@ form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex; }
-  .scoreCard h4 {
+  .score-card h4 {
     margin: 0 10px;
     text-transform: uppercase; }
-  .scoreCard .rightAnswer {
+  .score-card .right-answer {
     color: #49b675; }
-  .scoreCard .wrongAnswer {
+  .score-card .wrong-answer {
     color: #ab0031; }
 
 .tagline {
   display: none; }
 
 @media (max-width: 1300px) {
-  .appInput .editionInfo p {
+  .app-input .edition-info p {
     font-size: 1.5rem; }
-  .appInput .scoreCard {
+  .app-input .score-card {
     font-size: 1.5rem; } }
 
 @media (max-width: 1200px) {
-  .appInput .editionInfo p {
+  .app-input .edition-info p {
     font-size: 1.25rem; }
-  .appInput .scoreCard {
+  .app-input .score-card {
     font-size: 1.5rem; }
   form {
     -webkit-box-align: center;
@@ -512,17 +512,17 @@ form {
       margin: 5px; } }
 
 @media (max-width: 1200px) and (max-width: 1100px) {
-  .appInput {
+  .app-input {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
     padding: 15px 20px; } }
 
 @media (max-width: 1200px) and (max-width: 900px) {
-  .appInput {
+  .app-input {
     -ms-flex-pack: distribute;
     justify-content: space-around; }
-  .formFlex {
+  .form-flex {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -532,21 +532,21 @@ form {
     flex-direction: column; } }
 
 @media (max-width: 1200px) and (max-width: 767px) {
-  .appInput {
+  .app-input {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column; } }
 
 @media (max-width: 1200px) and (max-width: 500px) {
-  .appInput .scoreCard h4 {
+  .app-input .score-card h4 {
     font-size: 1.25rem; }
-  .appInput .editionInfo {
+  .app-input .edition-info {
     text-align: center;
     width: 250px; }
-    .appInput .editionInfo p {
+    .app-input .edition-info p {
       font-size: 1.25rem; }
-  .appInput .scoreCard {
+  .app-input .score-card {
     font-size: 1.25rem; }
   form {
     -webkit-box-orient: vertical;
@@ -573,7 +573,7 @@ form {
     display: block; } }
 
 @media (max-width: 1200px) and (max-width: 480px) {
-  .formFlex {
+  .form-flex {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -583,9 +583,9 @@ form {
     flex-direction: column;
     width: 100%; } }
 
-.submitButton,
+.submit-button,
 .reload,
-.reloadModal {
+.reload-modal {
   background-color: #E86100;
   border: none;
   color: #141414;
@@ -594,10 +594,10 @@ form {
   font-weight: bold;
   text-transform: uppercase; }
 
-.submitButton {
+.submit-button {
   padding: 5px; }
 
-.reloadModal {
+.reload-modal {
   border-color: #56453E;
   border-style: solid;
   border-width: 5px;
@@ -617,7 +617,7 @@ form {
   text-shadow: 1px 1px #E8DEC4; }
 
 @media (max-width: 500px) {
-  .submitButton {
+  .submit-button {
     font-size: 1rem;
     font-weight: bold;
     margin: 0 10px;
@@ -726,7 +726,7 @@ main {
   display: flex;
   pointer-events: none; }
 
-.inputFlex {
+.input-flex {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

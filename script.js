@@ -128,10 +128,10 @@ $(function () {
 
 //Open instruction modal
     $(`.help`).on(`click`, function(){
-        $(`.modalOpen`).removeClass(`visuallyhidden`);
-            if ($(`.modalOpen`).not(`visuallyhidden`)){ 
+        $(`.modal-open`).removeClass(`visuallyhidden`);
+        if ($(`.modal-open`).not(`visuallyhidden`)){ 
                 $(`.cards`).addClass(`.disableCardsOpen`); 
-            if (($`.modalOpen`).hasClass(`visuallyhidden`)){
+            if (($`.modal-open`).hasClass(`visuallyhidden`)){
                 $(`.cards`).removeClass(`disableCardsOpen`)
             }
         }
@@ -142,15 +142,15 @@ $(function () {
 
     window.addEventListener("click", function () {
         if (event.target === modal) {
-            $(`.modalOpen`).addClass(`visuallyhidden`);
+            $(`.modal-open`).addClass(`visuallyhidden`);
         }
     })
 
-    $(`.closeModal`).on(`click`, function () {
-        $(`.modalOpen`).addClass(`visuallyhidden`);
+    $(`.close-modal`).on(`click`, function () {
+        $(`.modal-open`).addClass(`visuallyhidden`);
     })
 
-    $(`.reloadModal`).on(`click`, function () {
+    $(`.reload-modal`).on(`click`, function () {
         location.reload();
     })
 
@@ -184,10 +184,10 @@ $(function () {
         console.log(score);
         if (answer === `right`){
             score.right = score.right + 1;
-            $(`.rightAnswer`).text(`${score.right} right`);
+            $(`.right-answer`).text(`${score.right} right`);
         } else {
             score.wrong = score.wrong + 1;
-            $(`.wrongAnswer`).text(`${score.wrong} wrong`);
+            $(`.wrong-answer`).text(`${score.wrong} wrong`);
         }
         console.log(score);
     }
@@ -248,8 +248,8 @@ $(function () {
             if (score.right + score.wrong === germanFlashcards.length) {
                 $(`.cards`).addClass(`visuallyhidden`);
                 $(`form`).addClass(`visuallyhidden`);
-                $(`.endMessage`).removeClass(`visuallyhidden`);
-                $(`.endMessage`).append
+                $(`.end-message`).removeClass(`visuallyhidden`);
+                $(`.end-message`).append
                     (`<h2><span>You're done!</span></h2>
                     <h2>You got ${score.right} answer(s) right and ${score.wrong} answer(s) wrong.</h2>
                     <h3>Need more than coffee? Check out <a href="https://www.duolingo.com/course/de/en/Learn-German" target="_blank"> Duolingo's German module!</a></h3>
