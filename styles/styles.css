@@ -393,9 +393,8 @@ main {
 @media (max-width: 320px) {
   .appInstructions {
     font-size: 1.5rem;
-    height: 50vh;
     line-height: 2;
-    padding: 25px 15px;
+    padding: 50px 15px;
     width: 300px; }
     .appInstructions .closeModal {
       right: 10px;
@@ -776,3 +775,12 @@ form {
 @media (max-width: 350px) {
   .cards h2 {
     font-size: 1rem; } }
+
+footer {
+  background-color: #141414;
+  color: #E8DEC4;
+  font-family: "Josefin Sans", sans-serif;
+  padding: 10px 0;
+  text-align: center; }
+  footer p {
+    margin: 0; }

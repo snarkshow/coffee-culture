@@ -17,15 +17,19 @@
                     <h1><a href="index.html"><span>C</span>offee <span>C</span>ulture</a></h1>
                     <p>Travelling the world? <span class="narrow"></span>Learn how to order coffee like a local!</p>
                 </div>
-                
+
                 <div class="helpButton">
-                    <i class="far fa-question-circle help"></i>
+                    <i class="far fa-question-circle help" aria-hidden="true"></i>
+                    <label for="help" class="visuallyhidden">Click here for help</label>
                 </div>
                 <div class="disableCards">
                     <div class="modalOpen" id="modal1">
                         <div class="appInstructions">
                             <ul>
-                                <li><i class="fas fa-times closeModal"></i></li>
+                                <li>
+                                    <i class="fas fa-times closeModal" aria-hidden="true"></i>
+                                    <label for="closeModal" class="visuallyhidden">Click here to close the help window</label>
+                                </li>
                                 <li>Click a blank card to flip it over</li>
                                 <li>Guess the English translation and type your guess into the box</li>
                             </ul>
@@ -45,12 +49,9 @@
                         <!-- add label -->
                         <form>
                             <label for="guess" class="visuallyhidden">Type your guess here</label>
-                            <input name="guess" id="guess" required="" oninvalid="this.setCustomValidity('Please type in a guess!')" oninput="setCustomValidity('')" autocomplete="off" class="user-input" type="text" placeholder="Type your guess">
-                            <!-- <div class="alert visuallyhidden" id="alert1">
-                                <i class="fas fa-times closeAlert"></i>
-                                <p>Please type in your guess!</p>
-                            </div> -->
-                            <button type="submit" class="submitButton">Here's My Guess!</button>
+                            <input name="guess" id="guess" required="" autocomplete="off" class="user-input" type="text" placeholder="Type your guess">
+                            <label for="submitButton" class="visuallyhidden">Submit guess in English.</label>
+                            <button type="submit" class="submitButton" id="submitButton">Here's My Guess!</button>
                         </form>
                     </section>
                     <div class="scoreCard">
@@ -68,8 +69,10 @@
                 </div>
             </div>
         </main>
+        <footer>
+            <p>Copyright &copy; 2019 Laura Chuang</p>
+        </footer>
 
-        
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
         <script src="script.js"> </script>
     </body>

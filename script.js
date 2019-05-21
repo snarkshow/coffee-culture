@@ -1,14 +1,12 @@
-
-
-// A $( document ).ready() block.
 $(function () {
 
-    // An array of objects with english and german values
+
     let score = {
         right: 0,
         wrong: 0,
     };
 
+// An array of objects with english and german values
     const germanFlashcards = [
         {
             id: 0,
@@ -87,14 +85,12 @@ $(function () {
         },
     ]
 
+//Fisher Yates shuffle
     function shuffle(array) {
         let currentIndex = array.length, temporaryValue, randomIndex;
-        // While there remain elements to shuffle...
         while (0 !== currentIndex) {
-            // Pick a remaining element...
             randomIndex = Math.floor(Math.random() * currentIndex);
             currentIndex -= 1;
-            // And swap it with the current element.
             temporaryValue = array[currentIndex];
             array[currentIndex] = array[randomIndex];
             array[randomIndex] = temporaryValue;
@@ -102,13 +98,11 @@ $(function () {
         return array;
     }
 
+//New array order each time
     tempArray = shuffle(germanFlashcards);
     console.log(tempArray);
 
-    // germanFlashcards.forEach((word) => {
-    //     $(`.cards`).append(`<li class="newCard back card "><h2 class="nobox">${word.germanWord}</h2></li>`);
-    // })
-
+//Take new array, insert objects into cards 
     tempArray.forEach((word) => {
         $(`.cards`)
             .append(`<li class="newCard back card" tabindex="0">
@@ -116,6 +110,7 @@ $(function () {
                     <h3 class="nobox" lang="en">${word.englishWord}</h3></li>`);
     })
 
+//function for ensuring keypress option (https://karlgroves.com/2014/11/24/ridiculously-easy-trick-for-keyboard-accessibility)
     function a11yClick(event) {
         if (event.type === 'submit' || event.type === `click`) {
             return true;
@@ -131,19 +126,7 @@ $(function () {
         }
     }
 
-    // Close the modal with the X, OR close the modal by clicking outside of it
-    let modal = document.getElementById('modal1');
-
-    window.addEventListener("click", function () {
-        if (event.target === modal) {
-            $(`.modalOpen`).addClass(`visuallyhidden`);
-        }
-    })
-
-    $(`.closeModal`).on(`click`, function(){
-        $(`.modalOpen`).addClass(`visuallyhidden`);
-    })
-
+//Open instruction modal
     $(`.help`).on(`click`, function(){
         $(`.modalOpen`).removeClass(`visuallyhidden`);
             if ($(`.modalOpen`).not(`visuallyhidden`)){ //if modal is visible 
@@ -154,30 +137,35 @@ $(function () {
         }
     })
 
+ // Close the modal with the X, OR close the modal by clicking outside of it
+    let modal = document.getElementById('modal1');
 
-    // Flip a card over
+    window.addEventListener("click", function () {
+        if (event.target === modal) {
+            $(`.modalOpen`).addClass(`visuallyhidden`);
+        }
+    })
+
+    $(`.closeModal`).on(`click`, function () {
+        $(`.modalOpen`).addClass(`visuallyhidden`);
+    })
+
+
+//Flip a card over, reveal a word
     $(`.back`).on("click keypress", function () {
         if (a11yClick(event) === true){
-        //click on a box, reveal the h2 text in german
             $(this).find(`h2`).toggleClass(`nobox`);
-  
-        //it starts with a class of back, but that will be taken off
-        //THIS will add a class of front, all other lis will still have a class of back
-        
             $(this).toggleClass(`back`).toggleClass(`front`);
             $(this).removeClass(`clicked`);
-            $(`li.back`).removeClass(`inactive`);
-        
+            $(`li.back`).removeClass(`inactive`);      
         }
     });
         
-        //click on the card you just flipped over, because you want to try a different card
+//Other cards become inactive when one card is flipped
     $(`.cards`).on("click keypress", ".front", function () {
         if (a11yClick(event) === true) {
-            $(this).addClass(`clicked`);
-         
+            $(this).addClass(`clicked`);         
             const flippedCard = $(`li`).hasClass(`clicked`);
-            //if flipCard is true, and has  a class of clicked, then console log it
             if (flippedCard === true) {
                 const back = $(`li`).hasClass(`back`);
                 if (back === true) {
@@ -187,6 +175,7 @@ $(function () {
         }
     });
 
+//Function to keep score of right/wrong answers
     function keepScore(answer) {
         console.log(score);
         if (answer === `right`){
@@ -215,20 +204,7 @@ $(function () {
         } 
     }
     
-    // $(`.closeAlert`).on(`click`, function () {
-    //     $(`.alert`).addClass(`visuallyhidden`);
-    // })
-
-    // function error(message){
-    //     if (message === `show`){
-    //         $(`.alert`).removeClass(`visuallyhidden`);
-    //         $(`li.back`).removeClass(`inactive`);
-    //         $(`li`).removeClass(`clicked`);
-    //         $(`h2`).addClass(`nobox`);
-    //     }
-    // }
-
-
+//Upon form submit, many things happen 
     $("form").on("submit", function (event) {
         if (a11yClick(event) === true){
             event.preventDefault();
@@ -237,11 +213,10 @@ $(function () {
             $(`li.back`).removeClass(`inactive`);
 
             let userInput = $("input").val();
-            // if (userInput.length === 0){
-            //     error(`show`);
-            // }
-            let listItem = $(`.clicked`).find(`h2`).text();
+            userInput = userInput.trim();
 
+//find the english word associated with the german card, compare it to the user's english input
+            let listItem = $(`.clicked`).find(`h2`).text();
             let thisCard = germanFlashcards.filter((property) => { 
                 if (listItem === property.germanWord) {
                     return property.englishWord
@@ -252,14 +227,9 @@ $(function () {
              if (userInput.toLowerCase() === thisCard){
                 keepScore(`right`);
                 rightAnswer(`noshow`);
-                alert(`match!!!`);
-                //takes off disabled class
                 $(`li`).removeClass(`inactive`);
-                //no longer in a clicked state
                 $(`li`).removeClass(`clicked`);
-                //the h2 disappears
                 $(`h2`).addClass(`nobox`);
-                //clears the input
                 $("input").val("");
             } else {
                 keepScore(`wrong`);
@@ -269,8 +239,9 @@ $(function () {
                 $("input").val("");
             }
         }
+
+//End once the score == the length of the array
             if (score.right + score.wrong === germanFlashcards.length) {
-                console.log(`score`);
                 $(`.cards`).addClass(`visuallyhidden`);
                 $(`form`).addClass(`visuallyhidden`);
                 $(`.endMessage`).removeClass(`visuallyhidden`);
@@ -280,8 +251,9 @@ $(function () {
                     <h3>Need more than coffee? Check out <a href="https://www.duolingo.com/course/de/en/Learn-German" target="_blank"> Duolingo's German module!</a></h3>
                     <button type="reload" class="reload">I want to try again!</button>`);
             }
+
+//reload the cards
             $(`.reload`).on(`click`, function () {
-                console.log(`button clicked`)
                 location.reload();
             })
         })    
