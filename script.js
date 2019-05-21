@@ -129,15 +129,15 @@ $(function () {
 //Open instruction modal
     $(`.help`).on(`click`, function(){
         $(`.modalOpen`).removeClass(`visuallyhidden`);
-            if ($(`.modalOpen`).not(`visuallyhidden`)){ //if modal is visible 
-                $(`.cards`).addClass(`.disableCardsOpen`); //disable the cards
+            if ($(`.modalOpen`).not(`visuallyhidden`)){ 
+                $(`.cards`).addClass(`.disableCardsOpen`); 
             if (($`.modalOpen`).hasClass(`visuallyhidden`)){
                 $(`.cards`).removeClass(`disableCardsOpen`)
             }
         }
     })
 
- // Close the modal with the X, OR close the modal by clicking outside of it
+ // Close the modal with the X, OR close the modal by clicking outside of it, OR reload the page from the modal
     let modal = document.getElementById('modal1');
 
     window.addEventListener("click", function () {
@@ -148,6 +148,10 @@ $(function () {
 
     $(`.closeModal`).on(`click`, function () {
         $(`.modalOpen`).addClass(`visuallyhidden`);
+    })
+
+    $(`.reloadModal`).on(`click`, function () {
+        location.reload();
     })
 
 
@@ -203,12 +207,11 @@ $(function () {
             $(`.clicked`).addClass(`correct`);
         } 
     }
-    
+
 //Upon form submit, many things happen 
     $("form").on("submit", function (event) {
         if (a11yClick(event) === true){
             event.preventDefault();
-
             $(`li.front`).addClass(`complete`);
             $(`li.back`).removeClass(`inactive`);
 

@@ -201,13 +201,6 @@ header {
   background-size: cover;
   padding: 30px 0 0 0; }
 
-main {
-  background: -webkit-gradient(linear, left top, right top, from(rgba(232, 222, 196, 0.6)), to(rgba(146, 127, 112, 0.8))), url("../assets/coffee-4-unsplash.jpg");
-  background: -webkit-linear-gradient(left, rgba(232, 222, 196, 0.6), rgba(146, 127, 112, 0.8)), url("../assets/coffee-4-unsplash.jpg");
-  background: -o-linear-gradient(left, rgba(232, 222, 196, 0.6), rgba(146, 127, 112, 0.8)), url("../assets/coffee-4-unsplash.jpg");
-  background: linear-gradient(90deg, rgba(232, 222, 196, 0.6), rgba(146, 127, 112, 0.8)), url("../assets/coffee-4-unsplash.jpg");
-  background-size: cover; }
-
 .title {
   text-align: center;
   position: relative; }
@@ -591,7 +584,8 @@ form {
     width: 100%; } }
 
 .submitButton,
-.reload {
+.reload,
+.reloadModal {
   background-color: #E86100;
   border: none;
   color: #141414;
@@ -602,6 +596,15 @@ form {
 
 .submitButton {
   padding: 5px; }
+
+.reloadModal {
+  border-color: #56453E;
+  border-style: solid;
+  border-width: 5px;
+  font-size: 1.25rem;
+  margin-top: 20px;
+  padding: 10px 20px;
+  text-shadow: 1px 1px #E8DEC4; }
 
 .reload {
   border-color: #56453E;
@@ -620,6 +623,13 @@ form {
     margin: 0 10px;
     padding: 5px;
     width: 250px; } }
+
+main {
+  background: -webkit-gradient(linear, left top, right top, from(rgba(232, 222, 196, 0.6)), to(rgba(146, 127, 112, 0.8))), url("../assets/coffee-4-unsplash.jpg");
+  background: -webkit-linear-gradient(left, rgba(232, 222, 196, 0.6), rgba(146, 127, 112, 0.8)), url("../assets/coffee-4-unsplash.jpg");
+  background: -o-linear-gradient(left, rgba(232, 222, 196, 0.6), rgba(146, 127, 112, 0.8)), url("../assets/coffee-4-unsplash.jpg");
+  background: linear-gradient(90deg, rgba(232, 222, 196, 0.6), rgba(146, 127, 112, 0.8)), url("../assets/coffee-4-unsplash.jpg");
+  background-size: cover; }
 
 .cards {
   display: -webkit-box;
