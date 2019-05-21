@@ -152,6 +152,7 @@ $(function () {
 
     $(`.reload-modal`).on(`click`, function () {
         location.reload();
+        $(`.modal-open`).addClass(`visuallyhidden`);
     })
 
 
