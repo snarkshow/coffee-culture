@@ -208,16 +208,13 @@ $(function () {
         } 
     }
 
+
 //Upon form submit, many things happen 
     $("form").on("submit", function (event) {
         if (a11yClick(event) === true){
             event.preventDefault();
-            $(`li.front`).addClass(`complete`);
-            $(`li.back`).removeClass(`inactive`);
 
-            let userInput = $("input").val();
-            userInput = userInput.trim();
-
+            
 //find the english word associated with the german card, compare it to the user's english input
             let listItem = $(`.clicked`).find(`h2`).text();
             let thisCard = germanFlashcards.filter((property) => { 
@@ -226,6 +223,8 @@ $(function () {
                 }
             })
             thisCard = thisCard[0].englishWord;
+            let userInput = $("input").val();           
+            userInput = userInput.trim();
 
              if (userInput.toLowerCase() === thisCard){
                 keepScore(`right`);
@@ -234,13 +233,15 @@ $(function () {
                 $(`li`).removeClass(`clicked`);
                 $(`h2`).addClass(`nobox`);
                 $("input").val("");
-            } else {
+            } else  {
                 keepScore(`wrong`);
                 rightAnswer(`show`);
                 $(`li`).removeClass(`clicked`);
                 $(`h2`).addClass(`nobox`);
                 $("input").val("");
             }
+            $(`li.front`).addClass(`complete`);
+            $(`li.back`).removeClass(`inactive`);
         }
 
 //End once the score == the length of the array
