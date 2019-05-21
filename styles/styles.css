@@ -338,7 +338,7 @@ header {
     margin: 0;
     text-shadow: 2px 2px #56453E; }
   .end-message a {
-    color: #49b675;
+    color: #E86100;
     text-shadow: 1px 1px #141414; }
 
 @media (max-width: 1100px) {
@@ -398,6 +398,8 @@ header {
     letter-spacing: 2px;
     line-height: 1.5;
     margin: 0; }
+    .end-message h2 span {
+      text-shadow: 1px 1px #141414; }
   .end-message h3 {
     font-family: "Rum Raisin", sans-serif;
     font-size: 1.25rem;

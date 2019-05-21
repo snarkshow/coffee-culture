@@ -253,7 +253,7 @@ $(function () {
                     (`<h2><span>You're done!</span></h2>
                     <h2>You got ${score.right} answer(s) right and ${score.wrong} answer(s) wrong.</h2>
                     <h3>Need more than coffee? Check out <a href="https://www.duolingo.com/course/de/en/Learn-German" target="_blank"> Duolingo's German module!</a></h3>
-                    <button type="reload" class="reload">I want to try again!</button>`);
+                    <button type="reload" class="reload">I want to try again</button>`);
             }
 
 //reload the cards

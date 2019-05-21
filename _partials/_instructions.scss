@@ -62,7 +62,7 @@
         text-shadow: 2px 2px $chocolate;
     }   
     a{
-        color: $green;
+        color: $pumpkinSpice;
         text-shadow: 1px 1px $black;
     }
 }
@@ -139,6 +139,9 @@
     .end-message {
         h2{
             @include instructionStyles(1.5rem);
+            span{
+                text-shadow: 1px 1px $black;
+            }
         }
         h3{
             @include instructionStyles(1.25rem);
