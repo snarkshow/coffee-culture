@@ -625,10 +625,10 @@ form {
     width: 250px; } }
 
 main {
-  background: -webkit-gradient(linear, left top, right top, from(rgba(232, 222, 196, 0.6)), to(rgba(146, 127, 112, 0.8))), url("../assets/coffee-4-unsplash.jpg");
-  background: -webkit-linear-gradient(left, rgba(232, 222, 196, 0.6), rgba(146, 127, 112, 0.8)), url("../assets/coffee-4-unsplash.jpg");
-  background: -o-linear-gradient(left, rgba(232, 222, 196, 0.6), rgba(146, 127, 112, 0.8)), url("../assets/coffee-4-unsplash.jpg");
-  background: linear-gradient(90deg, rgba(232, 222, 196, 0.6), rgba(146, 127, 112, 0.8)), url("../assets/coffee-4-unsplash.jpg");
+  background: -webkit-gradient(linear, left top, right top, from(rgba(232, 222, 196, 0.6)), to(rgba(146, 127, 112, 0.8))), url("../assets/coffee-3-unsplash.jpg");
+  background: -webkit-linear-gradient(left, rgba(232, 222, 196, 0.6), rgba(146, 127, 112, 0.8)), url("../assets/coffee-3-unsplash.jpg");
+  background: -o-linear-gradient(left, rgba(232, 222, 196, 0.6), rgba(146, 127, 112, 0.8)), url("../assets/coffee-3-unsplash.jpg");
+  background: linear-gradient(90deg, rgba(232, 222, 196, 0.6), rgba(146, 127, 112, 0.8)), url("../assets/coffee-3-unsplash.jpg");
   background-size: cover; }
 
 .cards {
