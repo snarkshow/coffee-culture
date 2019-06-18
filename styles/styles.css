@@ -309,7 +309,7 @@ header {
 
 @media (max-width: 500px) {
   .title h1 {
-    margin: 25px 0 0;
+    margin: 10px 0 0;
   }
   .title h1 a {
     font-size: 2rem;
